@@ -1,0 +1,1793 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project ref='SimpleWeb' name='Simple Web App' revision='1' type='STANDARD' status='OPEN' priority='0' tags=''><!-- This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/ -->
+  <desc />
+  <questions />
+  <assets>
+    <asset name='Credit Card Data' desc='Card holder data including the full PAN and CVV number.' identifier=''>
+      <classification name='Cardholder data' desc='Credit card data under the remit of PCI' confidentiality='100' integrity='100' availability='30' />
+    </asset>
+  </assets>
+  <accessTypes>
+    <accessType name='Stored' value='10' />
+    <accessType name='Processed' value='20' />
+    <accessType name='Sent from component' value='40' />
+    <accessType name='Received by component' value='50' />
+  </accessTypes>
+  <trustZones>
+    <trustZone name='Internet' desc='Untrusted Internet public zone' trustRating='1' />
+    <trustZone name='Public' desc='Untrusted public zone' trustRating='1' />
+    <trustZone name='Public Cloud' desc='Public cloud services' trustRating='60' />
+    <trustZone name='Trusted Partner' desc='Vetted and trusted partner' trustRating='80' />
+    <trustZone name='Private Secured' desc='A secured zone within a trusted private zone' trustRating='100' />
+  </trustZones>
+  <settings>
+    <setting name='jira.url' value='' />
+    <setting name='jira.issuetype' value='Bug' />
+    <setting name='jira.priority' value='High' />
+    <setting name='threadfix.url' value='http://external.iriusrisk.com:8080/threadfix/rest' />
+    <setting name='jira.key' value='' />
+    <setting name='jira.closed.issue.names' value='Fixed' />
+    <setting name='tests.vcs.type' value='localcopy' />
+    <setting name='tests.vcs.master.remote' value='' />
+    <setting name='tests.import.interval' value='5' />
+    <setting name='jira.rejected.issue.names' value='Won&apos;t Fix' />
+    <setting name='threadfix.app.unique.name' value='' />
+    <setting name='threadfix.team' value='continuum' />
+    <setting name='bdd.security.output.dir' value='' />
+    <setting name='threadfix.key' value='bzxr4HnmabY7xFVX3n7cMgqjfOPI3zESdc5iOKeiWQ' />
+    <setting name='jira.password' value='' />
+    <setting name='jira.username' value='' />
+  </settings>
+  <components>
+    <component ref='WEB-APP' name='Web Application' desc='The server side functions of a web application' groupName='' tags='' position='1'>
+      <questions>
+        <question ref='type.webfe' />
+        <question ref='userPassAuth' />
+      </questions>
+      <trustZones>
+        <trustZone name='Internet' />
+      </trustZones>
+      <assets>
+        <asset name='Credit Card Data' accessType='10' />
+        <asset name='Credit Card Data' accessType='20' />
+      </assets>
+      <weaknesses>
+        <weakness ref='CWE-319-AUTH' name='Cleartext Transmission of Authentication Credentials' state='0' impact='100'>
+          <desc>The software transmits sensitive or security-critical data in cleartext in a communication channel that can be sniffed by unauthorized actors.</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:08:47.394'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+        <weakness ref='CWE-311' name='Missing Encryption of Sensitive Data' state='0' impact='100'>
+          <desc>The software does not encrypt sensitive or critical information before storage or transmission.</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:08:47.474'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+        <weakness ref='CWE-204' name='Response Discrepancy Information Exposure' state='0' impact='100'>
+          <desc>The software provides different responses to incoming requests in a way that allows an actor to determine system state information that is outside of that actor's control sphere.</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:08:47.584'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+        <weakness ref='NO-PASSWORD-CHANGE' name='Lack of password change facility' state='0' impact='100'>
+          <desc>If users cannot change their password, then they cannot choose a strong password nor change it periodically</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:08:47.654'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+        <weakness ref='CWE-262' name='Not Using Password Aging' state='0' impact='100'>
+          <desc>If no mechanism is in place for managing password aging, users will have no incentive to update passwords in a timely manner.</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:08:47.660'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+        <weakness ref='NO-PWD-QUALITY' name='Lack of password quality checks' state='0' impact='100'>
+          <desc>If the application does not check the quality of the password selected by the user, then the user could select a weak and easily guessable password.</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:08:47.687'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+        <weakness ref='CWE-178-AUTH' name='Application does not distinguish between upper and lower case passwords' state='0' impact='100'>
+          <desc>A case insensitive password verification mechanism effectively reduces the searchable keyspace for the password, making brute force attacks more feasible.</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:08:47.711'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+        <weakness ref='CWE-654' name='Reliance on a Single Factor in a Security Decision' state='0' impact='100'>
+          <desc>A protection mechanism relies exclusively, or to a large extent, on the evaluation of a single condition or the integrity of a single object or entity in order to make a decision about granting access to restricted resources or functionality.</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:08:47.732'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+        <weakness ref='CWE-799' name='Improper Control of Interaction Frequency' state='0' impact='100'>
+          <desc>The software does not properly limit the number or frequency of interactions that it has with an actor, such as the number of incoming requests.</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:08:47.828'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+        <weakness ref='CWE-778' name='Insufficient Logging' state='0' impact='100'>
+          <desc>When a security-critical event occurs, the software either does not record the event or omits important details about the event when logging it.</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:08:47.880'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+        <weakness ref='CWE-97' name='Improper Neutralization of Server-Side Includes (SSI) Within a Web Page' state='0' impact='100'>
+          <desc>The software generates a web page, but does not neutralize or incorrectly neutralizes user-controllable input that could be interpreted as a server-side include (SSI) directive.</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:08:47.973'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+        <weakness ref='CWE-22' name='Improper Limitation of a Pathname to a Restricted Directory (&apos;Path Traversal&apos;)' state='0' impact='100'>
+          <desc>The software uses external input to construct a pathname that is intended to identify a file or directory that is located underneath a restricted parent directory, but the software does not properly neutralize special elements within the pathname that can cause the pathname to resolve to a location that is outside of the restricted directory.  Path traversal vulnerabilities allow attackers to gain access to files on the web or application server by manipulating the path of parameters. For example, given the URL:    www.example.com/openfile.jsp?details.txt  An attacker could change it to attempt to retrieve the password file on a Unix server:  www.example.com/openfile.jsp?../../../../../../etc/passwd</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:08:47.993'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+        <weakness ref='CWE-98' name='Improper Control of Filename for Include/Require Statement' state='0' impact='100'>
+          <desc>The application receives input from an upstream component, but it does not restrict or incorrectly restricts the input before its usage in "require," "include," or similar functions.</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:08:48.021'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+        <weakness ref='CWE-20' name='Improper Input Validation' state='0' impact='100'>
+          <desc>The product does not validate or incorrectly validates input that can affect the control flow or data flow of a program.</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:08:48.026'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+        <weakness ref='CWE-915' name='Improperly Controlled Modification of Dynamically-Determined Object Attributes' state='0' impact='100'>
+          <desc>The software receives input from an upstream component that specifies multiple attributes, properties, or fields that are to be initialized or updated in an object, but it does not properly control which attributes can be modified.</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:08:48.078'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+        <weakness ref='CWE-639' name='Authorization Bypass Through User-Controlled Key' state='0' impact='100'>
+          <desc>The system's authorization functionality does not prevent one user from gaining access to another user's data or record by modifying the key value identifying the data.</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:08:48.237'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+        <weakness ref='CWE-306' name='Missing Authentication for Critical Function' state='0' impact='100'>
+          <desc>The software does not perform any authentication for functionality that requires a provable user identity or consumes a significant amount of resources.</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:08:48.288'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+      </weaknesses>
+      <controls>
+        <control ref='CWE-98-MAPPING' name='Create a mapping to existing objects' issueId='' platform='' cost='0' risk='25' state='Recommended' owner='admin'>
+          <desc>When the set of acceptable objects, such as filenames or URLs, is limited or known, create a
+                        mapping from a set of fixed input values (such as numeric IDs) to the actual filenames or URLs,
+                        and reject all other inputs.For example, ID 1 could map to &amp;quot;inbox.txt&amp;quot; and ID
+                        2 could map to &amp;quot;profile.txt&amp;quot;. Features such as the ESAPI AccessReferenceMap
+                        provide this capability.
+                    </desc>
+          <implementations />
+          <references />
+          <standards />
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:16.230'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='CWE-311-AT-REST' name='Encrypt the data before storing it on the host' issueId='' platform='' cost='0' risk='25' state='Recommended' owner=''>
+          <desc>Encrypt the data before storing it on the host. The key for encrypting and
+                        decrypting the data should not be accessible from the same host. The encryption
+                        and decryption operation should be performed on a different host.
+                    </desc>
+          <implementations />
+          <references />
+          <standards />
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:17.905'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='CWE-319-TRANSPORT' name='Encrypt the data transport to the service' issueId='' platform='' cost='0' risk='25' state='Recommended' owner=''>
+          <desc>Encrypt the data transport to the service with TLS. &amp;nbsp;Where
+                        possible the encryption should be end-to-end, that is to say it should terminate
+                        within a
+                        secure environment on the server side.
+                    </desc>
+          <implementations />
+          <references />
+          <standards>
+            <standard ref='10.3' name='OWASP-ASVS-Level-2' />
+            <standard ref='10.3' name='OWASP-ASVS-Level-3' />
+          </standards>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:15.675'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='CWE-204-USERNAME-TIMING' name='The timing of responses from failed login attempts should not indicate whether the username was correct' issueId='' platform='' cost='0' risk='25' state='Recommended' owner=''>
+          <desc>The response time for a login request with a valid username and an invalid
+                        username should not be consistently different. &amp;nbsp;Login functions that
+                        first perform a database select on the username and then on the password could
+                        cause the response time to be consistently different for existent and
+                        non-existent usernames. &amp;nbsp;In such cases, a random time delay should be
+                        included in the response.
+                    </desc>
+          <implementations />
+          <references />
+          <standards />
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:15.128'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='CWE-204-USERNAME-LOGIN' name='Error messages should not reveal information about the user status' issueId='' platform='' cost='0' risk='25' state='Recommended' owner=''>
+          <desc>Error messages during the login process should not disclose which
+                        authentication
+                        token was
+                        incorrect, instead a generic message simply stating that authentication failed
+                        should be
+                        displayed.
+                    </desc>
+          <implementations />
+          <references />
+          <standards>
+            <standard ref='2.18' name='OWASP-ASVS-Level-2' />
+            <standard ref='2.18' name='OWASP-ASVS-Level-3' />
+            <standard ref='2.18' name='OWASP-ASVS-Level-1' />
+          </standards>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:15.138'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='CWE-255-PWD-CHANGE' name='Offer a password change facility' issueId='' platform='' cost='0' risk='25' state='Recommended' owner=''>
+          <desc>Users should be allowed to change their passwords. &amp;nbsp;The password
+                        change
+                        facility
+                        must require the user to enter their current password before changing it to a
+                        different
+                        value.
+                    </desc>
+          <implementations />
+          <references />
+          <standards>
+            <standard ref='2.9' name='OWASP-ASVS-Level-2' />
+            <standard ref='2.9' name='OWASP-ASVS-Level-3' />
+          </standards>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:15.166'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='CWE-178-AUTH' name='The login function should distinguish between upper and lower case passwords' issueId='' platform='' cost='0' risk='25' state='Recommended' owner=''>
+          <desc>The login function should distinguish between upper and lower case passwords</desc>
+          <implementations />
+          <references />
+          <standards />
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:15.146'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='CWE-654' name='Apply two factor authentication' issueId='' platform='' cost='0' risk='25' state='Recommended' owner=''>
+          <desc>Apply a two factor authentication system that authenticates a user based on
+                        something they
+                        know, e.g. a secret, and something they have, e.g. a token.
+                    </desc>
+          <implementations />
+          <references />
+          <standards>
+            <standard ref='164.312(d)' name='HIPAA' />
+          </standards>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:14.221'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='CWE-521' name='Require the use of strong passwords' issueId='' platform='' cost='0' risk='25' state='Recommended' owner=''>
+          <desc>Encourage the use of long pass-phrases and enforce a minimum criteria for
+                        password
+                        quality
+                        which should include:
+                        &lt;ul&gt;
+                        &lt;li&gt;Password length&lt;/li&gt;
+                        &lt;li&gt;Mixed case and numeric and/or special characters&amp;nbsp;&lt;/li&gt;
+                        &lt;li&gt;Non-dictionary words&lt;/li&gt;
+                        &lt;/ul&gt;
+                        &lt;p&gt;&lt;b&gt;Password length&lt;/b&gt;&lt;/p&gt;
+                        &lt;p&gt;Password length considers the minimum and maximum length of characters
+                        comprising
+                        the password of your users. For ease of changing this length, its implementation
+                        can
+                        be
+                        configurable possibly using a properties file or xml configuration file.&lt;/p&gt;
+                        &lt;ul&gt;
+                        &lt;li&gt;Minimum length. Passwords should be at least eight (8) characters
+                        long.
+                        Combining
+                        this length with complexity makes a password difficult to guess and/or brute
+                        force.&lt;/li&gt;
+                        &lt;li&gt;Maximum length. Remember, people tend to forget their passwords
+                        easily.
+                        The longer
+                        the password, the more likely people are to enter them incorrectly for your
+                        system.&lt;/li&gt;
+                        &lt;/ul&gt;
+                        &lt;p&gt;&lt;b&gt;Password Complexity&lt;/b&gt;&lt;/p&gt;
+                        &lt;ul&gt;
+                        &lt;li&gt;Password characters should be a combination of alphanumeric
+                        characters.
+                        Alphanumeric characters consist of letters, numbers, punctuation marks,
+                        mathematical
+                        and
+                        other conventional symbols. See implementation below for the exact characters
+                        referred to.&lt;/li&gt;
+                        &lt;li&gt;For change password functionality, if possible, keep a history of old
+                        passwords
+                        hashes used. You should not store the actual passwords to protect against brute
+                        forcing if
+                        the database file is compromised. In this way, the user cannot change to a
+                        password
+                        that was
+                        used a couple of months back.&lt;/li&gt;
+                        &lt;/ul&gt;
+                        &lt;ul&gt;
+                        &lt;/ul&gt;</desc>
+          <implementations />
+          <references />
+          <standards>
+            <standard ref='2.7' name='OWASP-ASVS-Level-2' />
+            <standard ref='2.7' name='OWASP-ASVS-Level-3' />
+          </standards>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:15.156'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='CWE-799-LOGIN' name='Implement connection rate limiting on the login form' issueId='' platform='' cost='0' risk='25' state='Recommended' owner=''>
+          <desc>Implement connection rate limiting to restrict the number of authentication
+                        attempts,
+                        based on the source IP address and the password submitted.
+                        &lt;br /&gt;Too many attempts from the same IP address should result in
+                        temporary
+                        denying
+                        access to that address. &amp;nbsp;This attack could still be launched using a
+                        botnet
+                        with
+                        distinct source IP addresses, in this case the attack should still be detected
+                        (based on
+                        exceeding a connection rate limit, or based on multiple attempts using the same
+                        password).
+                    </desc>
+          <implementations />
+          <references />
+          <standards>
+            <standard ref='4.17' name='OWASP-ASVS-Level-2' />
+            <standard ref='4.17' name='OWASP-ASVS-Level-3' />
+          </standards>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:15.179'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='CWE-778-AUTH' name='Log all authentication decisions' issueId='' platform='' cost='0' risk='25' state='Recommended' owner=''>
+          <desc>Log both failed and successful authentication attempts. &amp;nbsp;The logged
+                        data
+                        should
+                        include:
+                        &lt;ul&gt;
+                        &lt;li&gt;A timestamp&lt;/li&gt;
+                        &lt;li&gt;The source address of the connection&lt;/li&gt;
+                        &lt;li&gt;The user account attempted&lt;/li&gt;
+                        &lt;/ul&gt;</desc>
+          <implementations />
+          <references />
+          <standards>
+            <standard ref='2.12' name='OWASP-ASVS-Level-3' />
+            <standard ref='2.12' name='OWASP-ASVS-Level-2' />
+          </standards>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:15.194'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='ASSIGN-WHITE' name='Assign values to variables based on a white-list' issueId='' platform='' cost='0' risk='0' state='Recommended' owner=''>
+          <desc>&lt;p&gt;Avoid using mass-assignment or auto-binding when accepting values from an untrusted
+                        source and mapping them to trusted server side values. &amp;nbsp;Prefer binding individual
+                        values to specific fields, instead of binding whole objects.&lt;/p&gt;
+                        &lt;p&gt;If available, use features of the language or framework that allow specification of
+                        white lists of attributes or fields that are allowed to be modified. If possible, prefer white
+                        lists over black lists.&lt;/p&gt;
+                        &lt;p&gt;For applications written with Ruby on Rails, use the attr_accessible (white list) or
+                        attr_protected (black list) macros in each class that may be used in mass
+                        assignment.&lt;/p&gt;</desc>
+          <implementations />
+          <references />
+          <standards />
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:16.263'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='CWE-98-LIB' name='Use a library that does not allow this weakness to occur' issueId='' platform='' cost='0' risk='25' state='Recommended' owner='admin'>
+          <desc>Use a vetted library or framework that does not allow this weakness to occur or provides
+                        constructs that make this weakness easier to avoid.
+                        &lt;br /&gt;</desc>
+          <implementations />
+          <references />
+          <standards />
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:16.218'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='CWE-97-DISABLE' name='Disable Server Side Includes where possible' issueId='' platform='' cost='0' risk='25' state='Recommended' owner=''>
+          <desc>&lt;p style="margin: 0px; padding: 0px; border: 0px; font-size: 13px;
+                        font-family:
+                        'Segoe
+                        UI', 'Lucida Grande', Arial; vertical-align: baseline; line-height: 19.5px;
+                        color:
+                        rgb(68,
+                        68, 68); background-color: rgb(255, 255, 255);"&gt;Disable SSI execution on
+                        pages
+                        that do
+                        not require it.&amp;nbsp;&lt;/p&gt;&lt;p style="margin: 0px; padding: 0px;
+                        border:
+                        0px;
+                        font-size: 13px; font-family: 'Segoe UI', 'Lucida Grande', Arial;
+                        vertical-align:
+                        baseline;
+                        line-height: 19.5px; color: rgb(68, 68, 68); background-color: rgb(255, 255,
+                        255);"&gt;For
+                        pages requiring SSI ensure that you perform the following checks&lt;/p&gt;&lt;p
+                        style="margin: 0px; padding: 0px; border: 0px; font-size: 13px; font-family:
+                        'Segoe
+                        UI',
+                        'Lucida Grande', Arial; vertical-align: baseline; line-height: 19.5px; color:
+                        rgb(68, 68,
+                        68); background-color: rgb(255, 255, 255);"&gt;&lt;ul&gt;&lt;li&gt;Only enable
+                        the
+                        SSI
+                        directives that are needed for this page and disable all others.&lt;/li&gt;&lt;li&gt;HTML
+                        entity encode user supplied data before passing it to a page with SSI execution
+                        permissions.&lt;/li&gt;&lt;li&gt;Use
+                        SUExec[5] to have the page execute as the owner of the file instead of the web
+                        server user.&lt;/li&gt;&lt;/ul&gt;&lt;/p&gt;</desc>
+          <implementations />
+          <references />
+          <standards />
+          <test expiryDate='' expiryPeriod='0'>
+            <steps>&lt;div&gt;&lt;ol&gt;&lt;li&gt;Using a browser configured to use a
+                            security
+                            scanning
+                            proxy&lt;/li&gt;&lt;li&gt;Navigate to all pages of the application&lt;/li&gt;&lt;li&gt;Submit
+                            all forms with valid data&lt;/li&gt;&lt;li&gt;Switch to the scanning proxy&lt;/li&gt;&lt;li&gt;Enable
+                            an SSI scanning policy&lt;/li&gt;&lt;li&gt;Scan for SSI vulnerabilities&lt;/li&gt;&lt;li&gt;Verify
+                            reported vulnerabilities by manually manipulating the request to match the
+                            reported
+                            vulnerability&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</steps>
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:16.256'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='CWE-639' name='Avoid using direct references to files or validate file names' issueId='' platform='' cost='0' risk='25' state='Recommended' owner=''>
+          <desc>Where possible, avoid using direct references to files in request parameters,
+                        for
+                        example
+                        instead of using:&lt;div&gt;www.example.com/open.jsp?file=details.txt&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;use:&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;www.example.com/open.jsp?file=1
+                        and then use a lookup table on the server to associate "1" with the file
+                        details.txt&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;If
+                        this is not possible, then validate the filename using a positive whitelist
+                        approach
+                        to only
+                        permit valid filenames and not allow path traversal using, "../" or "..\" or "/"
+                        etc.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;</desc>
+          <implementations />
+          <references />
+          <standards>
+            <standard ref='4.4' name='OWASP-ASVS-Level-1' />
+            <standard ref='4.4' name='OWASP-ASVS-Level-2' />
+            <standard ref='4.4' name='OWASP-ASVS-Level-3' />
+          </standards>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:16.241'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='DATA-VAL' name='Validate all data received from the client side' issueId='' platform='' cost='0' risk='25' state='Recommended' owner='admin'>
+          <desc>Assume all input is malicious. Use an &amp;quot;accept known good&amp;quot; input validation
+                        strategy, i.e., use a whitelist of acceptable inputs that strictly conform to specifications.
+                        Reject any input that does not strictly conform to specifications, or transform it into
+                        something that does.
+                        &lt;br /&gt;When performing input validation, consider all potentially relevant properties,
+                        including length, type of input, the full range of acceptable values, missing or extra inputs,
+                        syntax, consistency across related fields, and conformance to business rules. As an example of
+                        business rule logic, &amp;quot;boat&amp;quot; may be syntactically valid because it only
+                        contains alphanumeric characters, but it is not valid if the input is only expected to contain
+                        colors such as &amp;quot;red&amp;quot; or &amp;quot;blue.&amp;quot;
+                        &lt;br /&gt;Do not rely exclusively on looking for malicious or malformed inputs (i.e., do not
+                        rely on a blacklist). A blacklist is likely to miss at least one undesirable input, especially
+                        if the code's environment changes. This can give attackers enough room to bypass the intended
+                        validation. However, blacklists can be useful for detecting potential attacks or determining
+                        which inputs are so malformed that they should be rejected outright.
+                        &lt;br /&gt;It is important to validate all data received from the client, including values such
+                        as HTTP headers and cookie values if these are used as input on the server side.
+                    </desc>
+          <implementations />
+          <references />
+          <standards />
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:16.249'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='AC-UNAUTHORISED' name='Apply access controls to segregate user data' issueId='' platform='' cost='0' risk='25' state='Recommended' owner=''>
+          <desc>Access control should adequately segregate user data, so that user A cannot
+                        view
+                        user B's
+                        data by simply manipulating the request.
+                        Access control decisions should be based on the user's session ID and enforced
+                        on
+                        the server
+                        side.
+                    </desc>
+          <implementations />
+          <references />
+          <standards>
+            <standard ref='4.1' name='OWASP-ASVS-Level-2' />
+            <standard ref='4.1' name='OWASP-ASVS-Level-1' />
+            <standard ref='4.1' name='OWASP-ASVS-Level-3' />
+          </standards>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps>&lt;ol&gt;&lt;li&gt;Using two different browsers configured with an
+                            intercepting
+                            proxy&lt;/li&gt;&lt;li&gt;Login as user A in browser A&lt;/li&gt;&lt;li&gt;Login
+                            as user
+                            B in browser B&lt;/li&gt;&lt;li&gt;For every operation that displays
+                            sensitive
+                            data
+                            belonging to user A:&lt;/li&gt;&lt;ol&gt;&lt;li&gt;Perform the operation as
+                            user
+                            A and
+                            view their sensitive data&lt;/li&gt;&lt;li&gt;Obtain the session ID of user
+                            B&lt;/li&gt;&lt;li&gt;Configure
+                            the proxy to intercept&lt;/li&gt;&lt;li&gt;Perform the operation as user A
+                            again, but
+                            this time intercept all the requests and replace user A's session ID with
+                            that
+                            of user B&lt;/li&gt;&lt;li&gt;Ensure
+                            that user A's sensitive data is &lt;b&gt;not &lt;/b&gt;visible&lt;/li&gt;&lt;/ol&gt;&lt;/ol&gt;</steps>
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:14.266'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='AC-ANON' name='Apply access controls to all resources that contain sensitive data' issueId='' platform='' cost='0' risk='25' state='Recommended' owner=''>
+          <desc>Access controls should prevent anonymous users from gaining unauthorised
+                        access to
+                        sensitive resources by directly accessing a URL or other resource.
+                    </desc>
+          <implementations />
+          <references />
+          <standards>
+            <standard ref='4.1' name='OWASP-ASVS-Level-2' />
+            <standard ref='4.1' name='OWASP-ASVS-Level-1' />
+            <standard ref='4.1' name='OWASP-ASVS-Level-3' />
+          </standards>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:14.248'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='CWE-306-SF' name='Authenticate users using single factor authentication' issueId='' platform='' cost='0' risk='25' state='Recommended' owner=''>
+          <desc>Authenticate users of the application by verifying that they are who they
+                        claim to
+                        be, by
+                        requiring them to enter a user identifier and a secret, such as PIN or password.
+                    </desc>
+          <implementations />
+          <references />
+          <standards>
+            <standard ref='2.1' name='OWASP-ASVS-Level-2' />
+            <standard ref='2.1' name='OWASP-ASVS-Level-1' />
+            <standard ref='2.1' name='OWASP-ASVS-Level-3' />
+            <standard ref='164.312(d)' name='HIPAA' />
+          </standards>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:14.281'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+      </controls>
+      <usecases>
+        <usecase ref='ACCESS SENSITIVE DATA' name='Access sensitive data' desc=''>
+          <threats>
+            <threat ref='CAPEC-122' name='Authenticated attackers could gain unauthorised access to sensitive data' state='Expose' owner='admin'>
+              <desc>Users could manipulate parameters in the requests to gain access to unauthorised data,
+                                such as data belonging to other users.
+                                &lt;br /&gt;If the server side bases authorisation decisions on predictable or
+                                non-secret values sent from the client (such as the UDID or IMEI number in mobile
+                                devices), then an attacker could guess or otherwise compromise such a value and
+                                impersonate the user.
+                            </desc>
+              <riskRating confidentiality='100' integrity='100' availability='0' easeOfExploitation='50' />
+              <references>
+                <reference name='OWASP Developers Guide: Authorisation' url='https://www.owasp.org/index.php/Guide_to_Authorization' />
+                <reference name='WASC-02' url='http://projects.webappsec.org/w/page/13246940/Insufficient%20Authorization' />
+              </references>
+              <weaknesses>
+                <weakness ref='CWE-639'>
+                  <controls>
+                    <control ref='AC-UNAUTHORISED' />
+                  </controls>
+                </weakness>
+              </weaknesses>
+              <controls />
+            </threat>
+            <threat ref='CAPEC-232' name='Anonymous users could gain access to sensitive data' state='Expose' owner='admin'>
+              <desc>Attackers could directly access sensitive data by bypassing access control
+                                mechanisms.
+                            </desc>
+              <riskRating confidentiality='100' integrity='100' availability='0' easeOfExploitation='50' />
+              <references>
+                <reference name='OWASP Development Guide: Authorisation' url='https://www.owasp.org/index.php/Guide_to_Authorization' />
+                <reference name='WASC-02' url='http://projects.webappsec.org/w/page/13246940/Insufficient%20Authorization' />
+                <reference name='OWASP Top Ten' url='https://www.owasp.org/index.php/Top_10_2007-Failure_to_Restrict_URL_Access' />
+              </references>
+              <weaknesses>
+                <weakness ref='CWE-306'>
+                  <controls>
+                    <control ref='AC-ANON' />
+                    <control ref='CWE-306-SF' />
+                  </controls>
+                </weakness>
+                <weakness ref='CWE-654'>
+                  <controls>
+                    <control ref='CWE-654' />
+                  </controls>
+                </weakness>
+              </weaknesses>
+              <controls />
+            </threat>
+          </threats>
+        </usecase>
+        <usecase ref='AUTHENTICATION' name='Authentication' desc=''>
+          <threats>
+            <threat ref='CAPEC-158-AUTH' name='Authentication credentials compromised through network sniffing' state='Expose' owner='admin'>
+              <desc>An attacker with access to the network path between the user and the server could
+                                use
+                                network sniffing to read clear text data traversing the network.
+                                &lt;br /&gt;The networks used by users are the most likely points of attack since
+                                these are
+                                often shared by many other users, e.g. corporate networks or are public and
+                                untrusted such
+                                as public WiFi access points.
+                            </desc>
+              <riskRating confidentiality='75' integrity='75' availability='0' easeOfExploitation='25' />
+              <references />
+              <weaknesses>
+                <weakness ref='CWE-319-AUTH'>
+                  <controls>
+                    <control ref='CWE-319-TRANSPORT' />
+                  </controls>
+                </weakness>
+              </weaknesses>
+              <controls />
+            </threat>
+            <threat ref='CWE-204-USERNAME-LOGIN' name='Usernames could be enumerated through login responses' state='Expose' owner='admin'>
+              <desc>Usernames could be enumerated through the login feature, if it returns error
+                                messages that
+                                allow attackers to infer whether the username or password was incorrect.
+                                &lt;br /&gt;For example, consider the following behaviour:An attacker attempts a
+                                username
+                                that existed on the system, but an incorrect password, and the system responds with
+                                the
+                                message: &amp;quot;Incorrect password&amp;quot;Then the attacker attempts a username
+                                that
+                                definitely does not exist in the system, and the system responds with the message:
+                                &amp;quot;Username
+                                not recognised&amp;quot;.
+                                &lt;br /&gt;Then the attacker can use automated scripts and typical usernames to
+                                create a
+                                list of usernames registered in the system.
+                            </desc>
+              <riskRating confidentiality='25' integrity='25' availability='0' easeOfExploitation='75' />
+              <references />
+              <weaknesses>
+                <weakness ref='CWE-204'>
+                  <controls>
+                    <control ref='CWE-204-USERNAME-TIMING' />
+                    <control ref='CWE-204-USERNAME-LOGIN' />
+                  </controls>
+                </weakness>
+              </weaknesses>
+              <controls />
+            </threat>
+            <threat ref='CAPEC-16' name='Dictionary-based or brute force password attack' state='Expose' owner='admin'>
+              <desc>An attacker tries each of the words in a dictionary as passwords to gain access to
+                                the system via some user's account. If the password chosen by the user was a word
+                                within the dictionary, this attack will be successful (in the absence of other
+                                mitigations). This is a specific instance of the password brute forcing attack
+                                pattern.&lt;/br&gt;</desc>
+              <riskRating confidentiality='75' integrity='75' availability='0' easeOfExploitation='50' />
+              <references />
+              <weaknesses>
+                <weakness ref='NO-PASSWORD-CHANGE'>
+                  <controls>
+                    <control ref='CWE-255-PWD-CHANGE' />
+                  </controls>
+                </weakness>
+                <weakness ref='NO-PWD-QUALITY'>
+                  <controls>
+                    <control ref='CWE-521' />
+                  </controls>
+                </weakness>
+                <weakness ref='CWE-262'>
+                  <controls>
+                    <control ref='CWE-255-PWD-CHANGE' />
+                  </controls>
+                </weakness>
+                <weakness ref='CWE-178-AUTH'>
+                  <controls>
+                    <control ref='CWE-178-AUTH' />
+                  </controls>
+                </weakness>
+                <weakness ref='CWE-654'>
+                  <controls>
+                    <control ref='CWE-654' />
+                  </controls>
+                </weakness>
+              </weaknesses>
+              <controls />
+            </threat>
+            <threat ref='CAPEC-112-USERNAME' name='User accounts compromised through username guessing' state='Expose' owner='admin'>
+              <desc>Attackers could perform a brute force attack against the login function by
+                                choosing a
+                                simple password that users are likely to use for the site, and that meets the site's
+                                password policy.
+                                &lt;br /&gt;Then they could use an automated script to iterate through a list of
+                                possible
+                                usernames. &amp;nbsp;These could be obtained from a dictionary, or generated through
+                                pure
+                                brute force means. &amp;nbsp;This type of attack cannot be defended against using an
+                                account
+                                lockout policy because each username is only attempted once.
+                            </desc>
+              <riskRating confidentiality='50' integrity='50' availability='0' easeOfExploitation='50' />
+              <references />
+              <weaknesses>
+                <weakness ref='NO-PWD-QUALITY'>
+                  <controls>
+                    <control ref='CWE-521' />
+                  </controls>
+                </weakness>
+                <weakness ref='CWE-799'>
+                  <controls>
+                    <control ref='CWE-799-LOGIN' />
+                  </controls>
+                </weakness>
+              </weaknesses>
+              <controls />
+            </threat>
+            <threat ref='CWE-778-AUTH' name='Attacks against the authentication system may go undetected' state='Expose' owner='admin'>
+              <desc>Automated attacks against many user accounts, or successful attacks against an
+                                account
+                                require a response. &amp;nbsp;If audit logs are not kept of both successful and
+                                unsuccessful
+                                authentication operations, then post attack forensics will be hampered.&amp;nbsp;
+                                &lt;br /&gt;Without a dynamic response to mass automated attacks against the
+                                authentication
+                                system, attackers stand a greater chance of success.
+                            </desc>
+              <riskRating confidentiality='75' integrity='75' availability='0' easeOfExploitation='50' />
+              <references />
+              <weaknesses>
+                <weakness ref='CWE-778'>
+                  <controls>
+                    <control ref='CWE-778-AUTH' />
+                  </controls>
+                </weakness>
+              </weaknesses>
+              <controls />
+            </threat>
+            <threat ref='CAPEC-201' name='Access system files through XML External Entity Attacks' state='Expose' owner='admin'>
+              <desc>An attacker creates an XML document that with an external entity reference. External
+                                entity references can take the form of &lt;!ENTITY name system "uri"&gt; tags in a DTD.
+                                Because processors may not validate documents with external entities, there may be no
+                                checks on the nature of the reference in the external entity. This can allow an attacker
+                                to open arbitrary files or connections. For example, the following DTD would attempt to
+                                open the /dev/tty device:&lt;/br&gt;</desc>
+              <riskRating confidentiality='50' integrity='50' availability='0' easeOfExploitation='50' />
+              <references />
+              <weaknesses />
+              <controls />
+            </threat>
+          </threats>
+        </usecase>
+        <usecase ref='READ OR POST DATA' name='Read or Post data' desc=''>
+          <threats>
+            <threat ref='CAPEC-101' name='Unauthorised data could be accessed by manipulating parameters sent to the application' state='Expose' owner='admin'>
+              <desc>The application could be tricked into exposing data to unauthorised users by
+                                manipulating the parameters it accepts.All data received from the client side could be
+                                subject to manipulation, including fields like cookies and HTTP headers, if these are
+                                used as inputs to the application.
+                            </desc>
+              <riskRating confidentiality='75' integrity='75' availability='0' easeOfExploitation='25' />
+              <references />
+              <weaknesses>
+                <weakness ref='CWE-97'>
+                  <controls>
+                    <control ref='CWE-97-DISABLE' />
+                  </controls>
+                </weakness>
+                <weakness ref='CWE-22'>
+                  <controls>
+                    <control ref='CWE-639' />
+                  </controls>
+                </weakness>
+                <weakness ref='CWE-20'>
+                  <controls>
+                    <control ref='DATA-VAL' />
+                  </controls>
+                </weakness>
+              </weaknesses>
+              <controls />
+            </threat>
+            <threat ref='CAPEC-137-MASS' name='Functionality could be subverted through mass assignment' state='Expose' owner='admin'>
+              <desc>If the application binds parameters to backend objects, then attackers could
+                                potentially
+                                set fields on those objects that were not designed to be modified by the user.
+                            </desc>
+              <riskRating confidentiality='75' integrity='75' availability='0' easeOfExploitation='75' />
+              <references />
+              <weaknesses>
+                <weakness ref='CWE-915'>
+                  <controls>
+                    <control ref='ASSIGN-WHITE' />
+                  </controls>
+                </weakness>
+              </weaknesses>
+              <controls />
+            </threat>
+            <threat ref='CAPEC-77-RCE' name='Execute arbitrary code on the server by manipulating parameters' state='Expose' owner='admin'>
+              <desc>In this pattern the attacker is able to execute arbitrary code remotely available from
+                                the application by sending specially crafted attack strings to the application's input.
+                                &lt;br /&gt;</desc>
+              <riskRating confidentiality='75' integrity='75' availability='0' easeOfExploitation='50' />
+              <references />
+              <weaknesses>
+                <weakness ref='CWE-98'>
+                  <controls>
+                    <control ref='DATA-VAL' />
+                    <control ref='CWE-98-LIB' />
+                    <control ref='CWE-98-MAPPING' />
+                  </controls>
+                </weakness>
+                <weakness ref='CWE-20'>
+                  <controls>
+                    <control ref='DATA-VAL' />
+                  </controls>
+                </weakness>
+              </weaknesses>
+              <controls />
+            </threat>
+          </threats>
+        </usecase>
+        <usecase ref='STORE SENSITIVE DATA' name='Store sensitive data' desc=''>
+          <threats>
+            <threat ref='HOST-COMPROMISE' name='Sensitive data is compromised if the host itself is compromised' state='Expose' owner='admin'>
+              <desc>If sensitive data is stored or processed on the host, then should the host itself be
+                                compromised by an attacker, the confidentiality and/or the integrity of the data would
+                                also be at risk.
+                            </desc>
+              <riskRating confidentiality='75' integrity='75' availability='0' easeOfExploitation='50' />
+              <references />
+              <weaknesses>
+                <weakness ref='CWE-311'>
+                  <controls>
+                    <control ref='CWE-311-AT-REST' />
+                  </controls>
+                </weakness>
+              </weaknesses>
+              <controls />
+            </threat>
+            <threat ref='BACKUP-COMPROMISE' name='Sensitive data is compromised if a backup of the data is compromised' state='Expose' owner='admin'>
+              <desc>Sensitive data could be compromised if an attacker gained access to a backup copy of
+                                that data.
+                            </desc>
+              <riskRating confidentiality='75' integrity='75' availability='0' easeOfExploitation='50' />
+              <references />
+              <weaknesses>
+                <weakness ref='CWE-311'>
+                  <controls>
+                    <control ref='CWE-311-AT-REST' />
+                  </controls>
+                </weakness>
+              </weaknesses>
+              <controls />
+            </threat>
+          </threats>
+        </usecase>
+      </usecases>
+    </component>
+    <component ref='BROWSER' name='Web Browser' desc='Web Browser' groupName='' tags='' position='2'>
+      <questions>
+        <question ref='type.browser' />
+      </questions>
+      <trustZones>
+        <trustZone name='Internet' />
+      </trustZones>
+      <assets>
+        <asset name='Credit Card Data' accessType='50' />
+        <asset name='Credit Card Data' accessType='40' />
+      </assets>
+      <weaknesses>
+        <weakness ref='CWE-295' name='Improper Certificate Validation' state='0' impact='100'>
+          <desc>The software does not validate, or incorrectly validates, a certificate.</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:28:14.947'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+        <weakness ref='CWE-319' name='Cleartext Transmission of Sensitive Information' state='0' impact='100'>
+          <desc>The software transmits sensitive or security-critical data in cleartext in a communication channel that can be sniffed by unauthorized actors.</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:28:14.995'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+        <weakness ref='CWE-79' name='Improper Neutralization of Input During Web Page Generation (&apos;Cross-site Scripting&apos;)' state='0' impact='100'>
+          <desc>The software does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users.</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:28:15.089'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+        <weakness ref='CWE-693-X-XSS-PROTECTION' name='Lack of supporting built in browser XSS protection' state='0' impact='100'>
+          <desc>The product does not use or incorrectly uses a protection mechanism that provides sufficient defense against directed attacks against the product.</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:28:15.109'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+        <weakness ref='CWE-693-NOSNIFF' name='Internet Explorer could allow Cross Site Scripting attacks through content sniffing' state='0' impact='100'>
+          <desc>Some version of Internet Explorer determine the MIME type of a file, but its content, not by the server defined MIME type.  If attackers can upload files, then they could trick IE into serving those files as JavaScript instead of the intended type; which would then result in a Cross Site Scripting attack</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:28:15.128'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+        <weakness ref='CWE-84-HTTP-ONLY' name='Lack of &apos;HttpOnly&apos; flag on session cookie' state='0' impact='100'>
+          <desc>Without the HttpOnly flag on session cookies, the cookies can be read from JavaScript.  Should Cross Site Scripting vulnerabilities exist, then they could be used to read the session cookie.</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:28:15.148'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+        <weakness ref='CWE-613' name='Insufficient Session Expiration' state='0' impact='100'>
+          <desc>According to WASC, "Insufficient Session Expiration is when a web site permits an attacker to reuse old session credentials or session IDs for authorization."</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:28:15.216'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+        <weakness ref='CWE-613-LOGOUT' name='Insufficient Session Logout' state='0' impact='100'>
+          <desc>If the server side does not revoke the session completely on logout, then the user could continue to use the previously issued session ID to gain access to the application.</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:28:15.274'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+        <weakness ref='CWE-352' name='Cross Site Request Forgery' state='0' impact='100'>
+          <desc>The web application does not, or can not, sufficiently verify whether a well-formed, valid, consistent request was intentionally provided by the user who submitted the request. When a web server is designed to receive a request from a client without any mechanism for verifying that it was intentionally sent, then it might be possible for an attacker to trick a client into making an unintentional request to the web server which will be treated as an authentic request. This can be done via a URL, image load, XMLHttpRequest, etc. and can result in exposure of data or unintended code execution.</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:28:15.354'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+        <weakness ref='CWE-306' name='Missing Authentication for Critical Function' state='0' impact='100'>
+          <desc>The software does not perform any authentication for functionality that requires a provable user identity or consumes a significant amount of resources.</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:28:15.377'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+        <weakness ref='CWE-693-CLICKJACK' name='Allow the page to be included in an iframe' state='0' impact='100'>
+          <desc>The page can be loaded into an iframe</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:28:15.444'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+        <weakness ref='CWE-525' name='Information Exposure Through Browser Caching' state='0' impact='100'>
+          <desc>For each web page, the application should have an appropriate caching policy specifying the extent to which the page and its form fields should be cached.</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:28:15.518'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+        <weakness ref='CWE-942-CORS' name='Overly permissive HTML5 Cross Domain Origin policy' state='0' impact='100'>
+          <desc>A domain that permits Cross Domain Origin requests from other domains, could be attacked from those domains.</desc>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2016-05-02T16:28:15.568'>
+              <output />
+            </source>
+            <references />
+          </test>
+        </weakness>
+      </weaknesses>
+      <controls>
+        <control ref='CWE-693-NOSNIFF' name='Set the X-Content-Type-Options HTTP header on the server side' issueId='' platform='' cost='0' risk='25' state='Recommended' owner=''>
+          <desc>Set the following header on any page that displays previously uploaded
+                        content:X-Content-Type-Options: nosniff
+                        &lt;br /&gt;</desc>
+          <implementations />
+          <references />
+          <standards />
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:20.974'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='CWE-84-HTTP-ONLY' name='Set the &apos;httpOnly&apos; flag on session cookies' issueId='' platform='' cost='0' risk='25' state='Recommended' owner=''>
+          <desc>When setting the session cookie, ensure that the 'httpOnly' flag is enabled.
+                    </desc>
+          <implementations />
+          <references />
+          <standards>
+            <standard ref='3.14' name='OWASP-ASVS-Level-2' />
+            <standard ref='3.14' name='OWASP-ASVS-Level-3' />
+            <standard ref='3.14' name='OWASP-ASVS-Level-1' />
+          </standards>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps>&lt;ol&gt;&lt;li&gt;Login to the application&lt;/li&gt;&lt;li&gt;Inspect
+                            the
+                            session
+                            cookie in the browser&lt;/li&gt;&lt;li&gt;Ensure that the 'httpOnly' flag is
+                            set&lt;/li&gt;&lt;/ol&gt;</steps>
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:20.984'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='ASVS-2014-3.3' name='Invalidate sessions after a period of inactivity' issueId='' platform='' cost='0' risk='50' state='Recommended' owner=''>
+          <desc>If the user has been inactive for a preset time period, then invalidate their
+                        session on
+                        the server side.
+                        &lt;br /&gt;</desc>
+          <implementations />
+          <references />
+          <standards>
+            <standard ref='164.312(a)(2)(iii)' name='HIPAA' />
+            <standard ref='3.3' name='OWASP-ASVS-Level-2' />
+            <standard ref='3.3' name='OWASP-ASVS-Level-1' />
+            <standard ref='3.3' name='OWASP-ASVS-Level-3' />
+          </standards>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:20.266'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='ASVS-2014-3.4' name='Invalidate session after a fixed time period' issueId='' platform='' cost='0' risk='50' state='Recommended' owner=''>
+          <desc>Invalidate session after a fixed time period, regardless of whether the user
+                        has
+                        been
+                        active or not.
+                    </desc>
+          <implementations />
+          <references />
+          <standards>
+            <standard ref='3.4' name='OWASP-ASVS-Level-3' />
+            <standard ref='3.4' name='OWASP-ASVS-Level-2' />
+          </standards>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:20.276'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='ASVS-2014-3.5' name='Provide logout links on all pages that require authentication' issueId='' platform='' cost='0' risk='50' state='Recommended' owner=''>
+          <desc>Provide clearly visible logout links on all pages after a user has logged in,
+                        so
+                        that they
+                        can easily logout.&amp;nbsp;
+                    </desc>
+          <implementations />
+          <references />
+          <standards>
+            <standard ref='3.5' name='OWASP-ASVS-Level-2' />
+            <standard ref='3.5' name='OWASP-ASVS-Level-3' />
+            <standard ref='3.5' name='OWASP-ASVS-Level-1' />
+          </standards>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:20.289'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='ASVS-3.2' name='When the user logs out, terminate the session on the server side' issueId='' platform='' cost='0' risk='50' state='Recommended' owner=''>
+          <desc>When the user chooses to logout, the session should be terminated and
+                        invalidated
+                        on the
+                        server side.This means that if an attacker resubmitted the same session ID, then
+                        it
+                        should
+                        be rejected and the user redirected to the login page.
+                    </desc>
+          <implementations />
+          <references />
+          <standards>
+            <standard ref='3.2' name='OWASP-ASVS-Level-3' />
+            <standard ref='3.2' name='OWASP-ASVS-Level-1' />
+            <standard ref='3.2' name='OWASP-ASVS-Level-2' />
+          </standards>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:20.252'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='CWE-352-TOKENS' name='Set and verify one time tokens for sensitive operations' issueId='' platform='' cost='1' risk='25' state='Recommended' owner=''>
+          <desc>HTML pages that offer sensitive operations should also include a random one
+                        time
+                        token as
+                        a hidden field with every form.When the form is submitted, the server side
+                        should
+                        verify
+                        that the token received is the same as the token issued.
+                    </desc>
+          <implementations />
+          <references />
+          <standards>
+            <standard ref='4.16' name='OWASP-ASVS-Level-3' />
+            <standard ref='4.16' name='OWASP-ASVS-Level-2' />
+            <standard ref='4.16' name='OWASP-ASVS-Level-1' />
+          </standards>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:20.997'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='RE-AUTH' name='Require re-authentication for critical operations' issueId='' platform='' cost='0' risk='25' state='Recommended' owner=''>
+          <desc>Require the user to re-authenticate before performing a critical operation. &amp;nbsp;The
+                        authentication token should accompany the request to ensure that the request itself is
+                        authenticated and not only the browser session.Re-authentication could be performed using a
+                        separate secondary secret, or by re-requesting the primary secret (password).
+                    </desc>
+          <implementations />
+          <references />
+          <standards />
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:20.954'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='@cwe-693-clickjack' name='Prevent the page from being framed by setting the X-Frame-Options header' issueId='' platform='' cost='0' risk='25' state='Recommended' owner='admin'>
+          <desc>Set the X-Frame-Options header to the value: SAMEORIGIN or DENY. &amp;nbsp;This header is
+                        honoured by the following browser versions:
+                        &lt;br /&gt;
+                        &lt;ul&gt;
+                        &lt;li&gt;Chrome 4.1.249.1042&lt;/li&gt;
+                        &lt;li&gt;Firefox (Gecko) 3.6.9&lt;/li&gt;
+                        &lt;li&gt;Internet Explorer 8.0 9.0&lt;/li&gt;
+                        &lt;li&gt;Opera 10.50Safari 4.0&lt;/li&gt;
+                        &lt;/ul&gt;Newer versions may also support the additional value: ALLOW-FROM which allows
+                        specifying URLS that are permitted to frame the page.
+                    </desc>
+          <implementations />
+          <references />
+          <standards />
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:21.007'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='CWE-525-CACHING' name='Set Cache-Control headers on sensitive content' issueId='' platform='' cost='0' risk='25' state='Recommended' owner=''>
+          <desc>Configure the server or application to set cache-control headers on sensitive content. &amp;nbsp;The
+                        following headers are recommended:&amp;nbsp;&amp;nbsp;
+                        &lt;br /&gt;Cache-control: no-cache, no-store, must-revalidatePragma: no-cache
+                    </desc>
+          <implementations />
+          <references />
+          <standards />
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:21.685'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='CWE-525-MOBILE' name='Do not offer autocompletion of sensitive data' issueId='' platform='' cost='0' risk='25' state='Recommended' owner=''>
+          <desc>The web application should not offer to autocomplete any sensitive data, such
+                        as authentication credentials, credit card numbers or sensitive personal
+                        details.
+                    </desc>
+          <implementations />
+          <references />
+          <standards>
+            <standard ref='9.1' name='OWASP-ASVS-Level-2' />
+            <standard ref='9.1' name='OWASP-ASVS-Level-1' />
+            <standard ref='9.1' name='OWASP-ASVS-Level-3' />
+          </standards>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:21.695'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='CWE-942-CORS' name='Set a restrictive Cross Domain Origin policy through HTTP headers' issueId='' platform='' cost='0' risk='25' state='Recommended' owner='admin'>
+          <desc>Set the Access-Control-Allow-Origin header to only permit a small set of trusted domains.
+                    </desc>
+          <implementations />
+          <references />
+          <standards />
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:21.703'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='CWE-295-PINNING' name='Verify the server&apos;s certificate against a trusted local copy' issueId='' platform='' cost='0' risk='25' state='Recommended' owner='admin'>
+          <desc>Instead of, or in addition to relying on a trusted third party Certificate
+                        Authority to validate the authenticity of the server's certificate, store a copy
+                        of the certificate on the client.
+                        &lt;br /&gt;The client can then validate the server's certificate using its own
+                        local copy.
+                    </desc>
+          <implementations />
+          <references />
+          <standards>
+            <standard ref='17.15' name='OWASP-ASVS-Level-3' />
+          </standards>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:13.372'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='CWE-295-CLIENT' name='Validate that the certificate presented by the server is signed by a trusted Certificate Authority' issueId='' platform='' cost='0' risk='25' state='Recommended' owner='admin'>
+          <desc>The client should verify that the TLS certificate presented by the server has
+                        been signed by a recognised certificate authority and that the information in
+                        the certificate is valid.
+                    </desc>
+          <implementations />
+          <references />
+          <standards>
+            <standard ref='17.1' name='OWASP-ASVS-Level-1' />
+            <standard ref='17.1' name='OWASP-ASVS-Level-3' />
+            <standard ref='17.1' name='OWASP-ASVS-Level-2' />
+          </standards>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:13.389'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='CWE-295' name='Sign the server&apos;s TLS certificate with a certificate issued by a trusted Certificate Authority' issueId='' platform='' cost='0' risk='25' state='Recommended' owner='admin'>
+          <desc>Ensure that the TLS certificate presented by the server is signed by a trusted
+                        Certificate Authority.
+                    </desc>
+          <implementations />
+          <references />
+          <standards />
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:13.417'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='CWE-319-TRANSPORT' name='Encrypt the data transport to the service with TLS' issueId='' platform='' cost='0' risk='25' state='Recommended' owner='admin'>
+          <desc>Encrypt the data transport to the service with TLS. &amp;nbsp;Where
+                        possible the encryption should be end-to-end, that is to say it should terminate
+                        within a
+                        secure environment on the server side.
+                    </desc>
+          <implementations />
+          <references />
+          <standards>
+            <standard ref='10.3' name='OWASP-ASVS-Level-3' />
+            <standard ref='10.3' name='OWASP-ASVS-Level-2' />
+          </standards>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:13.403'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='CWE-79-ENCODE' name='Perform contextual HTML encoding of all user submitted data' issueId='' platform='.NET' cost='0' risk='75' state='Recommended' owner=''>
+          <desc>Identify where in the HTML document user submitted data is included, and apply
+                        the
+                        appropriate encoding for that context.
+                        For example, if data is inserted into the HTML body then HTML Entity encoding
+                        should
+                        be
+                        performed, but if the data is inserted into a JavaScript block, then Javascript
+                        escaping
+                        should be performed.&lt;div&gt;&lt;br&gt;&lt;/div&gt;</desc>
+          <implementations>
+            <implementation platform='Spring MVC'>
+              <desc>CkluIHdlYi54bWwKCjxjb250ZXh0LXBhcmFtPgogICAgPHBhcmFtLW5hbWU+ZGVmYXVsdEh0bWxFc2NhcGU8L3BhcmFtLW5hbWU+CiAgICA8cGFyYW0tdmFsdWU+dHJ1ZTwvcGFyYW0tdmFsdWU+CjwvY29udGV4dC1wYXJhbT4=</desc>
+            </implementation>
+            <implementation platform='.NET'>
+              <desc>ClJlc3BvbnNlLldyaXRlKEh0dHBVdGlsaXR5Lkh0bWxFbmNvZGUoUmVxdWVzdC5Gb3JtWyJuYW1lIl0pKTs=</desc>
+            </implementation>
+          </implementations>
+          <references />
+          <standards>
+            <standard ref='5.16' name='OWASP-ASVS-Level-1' />
+            <standard ref='5.16' name='OWASP-ASVS-Level-3' />
+            <standard ref='5.16' name='OWASP-ASVS-Level-2' />
+          </standards>
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:21.033'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+        <control ref='CWE-693-X-XSS-PROTECTION' name='Set the X-XSS-Protection header from the server side' issueId='' platform='' cost='0' risk='25' state='Recommended' owner=''>
+          <desc>Set the following header to enable the built in Cross Site Scripting protection of some
+                        browsers, including Internet Explorer 8 and newer and some versions of WebKit based browsers
+                        like Chrome and Safari:&amp;nbsp;
+                        &lt;br /&gt;X-XSS-Protection: 1; mode=block
+                    </desc>
+          <implementations />
+          <references />
+          <standards />
+          <test expiryDate='' expiryPeriod='0'>
+            <steps />
+            <notes />
+            <source filename='' args='' type='Manual' result='Not Tested' enabled='true' timestamp='2015-08-15T17:17:20.966'>
+              <output></output>
+            </source>
+            <references />
+          </test>
+        </control>
+      </controls>
+      <usecases>
+        <usecase ref='ACCESS SENSITIVE DATA' name='Access sensitive data' desc=''>
+          <threats>
+            <threat ref='CAPEC-204-AUTOCOMPLETE' name='Attackers with access to a victim&apos;s browser could read locally cached data' state='Expose' owner='admin'>
+              <desc>If the application accepts sensitive data through forms, then browsers could cache
+                                that
+                                data and redisplay it if an attacker views the same form in the same browser.This
+                                requires
+                                the attacker to have access to the victim's browser.
+                            </desc>
+              <riskRating confidentiality='75' integrity='75' availability='0' easeOfExploitation='75' />
+              <references />
+              <weaknesses>
+                <weakness ref='CWE-525'>
+                  <controls>
+                    <control ref='CWE-525-CACHING' />
+                    <control ref='CWE-525-MOBILE' />
+                  </controls>
+                </weakness>
+              </weaknesses>
+              <controls />
+            </threat>
+            <threat ref='CWE-942-CORS' name='Remote attackers could access sensitive data through Cross Domain Origin Requests' state='Expose' owner='admin'>
+              <desc>Attackers could use malicious web sites to read sensitive data from the user's data.
+                            </desc>
+              <riskRating confidentiality='75' integrity='75' availability='0' easeOfExploitation='75' />
+              <references />
+              <weaknesses>
+                <weakness ref='CWE-942-CORS'>
+                  <controls>
+                    <control ref='CWE-942-CORS' />
+                  </controls>
+                </weakness>
+              </weaknesses>
+              <controls />
+            </threat>
+          </threats>
+        </usecase>
+        <usecase ref='READ OR POST DATA' name='Read or Post data' desc=''>
+          <threats>
+            <threat ref='CAPEC-341' name='Attackers could gain access to sensitive data through Cross Site Scripting' state='Expose' owner='admin'>
+              <desc>Cross Site Scripting vulnerabilities could allow attackers to gain control of
+                                users'
+                                browsers, which in turn would allow them to:&lt;div&gt;&lt;ol&gt;&lt;li&gt;Re-write
+                                browser
+                                content&lt;/li&gt;&lt;li&gt;Read the users' session cookie and thereby hijack their
+                                session&lt;/li&gt;&lt;li&gt;Read
+                                form data from the users' browser&lt;/li&gt;&lt;li&gt;Trick users into installing
+                                malware&amp;nbsp;&lt;/li&gt;&lt;/ol&gt;&lt;/div&gt;</desc>
+              <riskRating confidentiality='75' integrity='75' availability='0' easeOfExploitation='25' />
+              <references />
+              <weaknesses>
+                <weakness ref='CWE-79'>
+                  <controls>
+                    <control ref='CWE-79-ENCODE' />
+                  </controls>
+                </weakness>
+                <weakness ref='CWE-693-X-XSS-PROTECTION'>
+                  <controls>
+                    <control ref='CWE-693-X-XSS-PROTECTION' />
+                  </controls>
+                </weakness>
+                <weakness ref='CWE-693-NOSNIFF'>
+                  <controls>
+                    <control ref='CWE-693-NOSNIFF' />
+                  </controls>
+                </weakness>
+                <weakness ref='CWE-84-HTTP-ONLY'>
+                  <controls>
+                    <control ref='CWE-84-HTTP-ONLY' />
+                  </controls>
+                </weakness>
+              </weaknesses>
+              <controls />
+            </threat>
+            <threat ref='CAPEC-473-SSL' name='Data is posted to a spoofed server' state='Expose' owner='admin'>
+              <desc>Attackers could spoof the legitimate server, so that data submitted from a browser
+                                is sent to the spoofed server controlled by the attacker.This attack can be
+                                performed as a man-in-the-middle attack if the attacker can insert themselves in
+                                between the browser and server (for example, in WiFi networks); or through DNS
+                                spoofing attacks across the network.
+                            </desc>
+              <riskRating confidentiality='50' integrity='50' availability='0' easeOfExploitation='50' />
+              <references />
+              <weaknesses>
+                <weakness ref='CWE-295'>
+                  <controls>
+                    <control ref='CWE-295-PINNING' />
+                    <control ref='CWE-295-CLIENT' />
+                    <control ref='CWE-295' />
+                  </controls>
+                </weakness>
+                <weakness ref='CWE-319'>
+                  <controls>
+                    <control ref='CWE-319-TRANSPORT' />
+                  </controls>
+                </weakness>
+              </weaknesses>
+              <controls />
+            </threat>
+            <threat ref='ASVS-2014-3.3' name='Attackers could gain access to an open session, if they have access to a user&apos;s browser' state='Expose' owner='admin'>
+              <desc>If a user steps away from their browser for a few minutes and there is an
+                                opportunity for
+                                an attacker to access the browser, then they could gain access to the user's logged
+                                in
+                                session and perform operations on their behalf.
+                            </desc>
+              <riskRating confidentiality='50' integrity='50' availability='0' easeOfExploitation='50' />
+              <references />
+              <weaknesses>
+                <weakness ref='CWE-613'>
+                  <controls>
+                    <control ref='ASVS-2014-3.3' />
+                    <control ref='ASVS-2014-3.4' />
+                    <control ref='ASVS-2014-3.5' />
+                  </controls>
+                </weakness>
+                <weakness ref='CWE-613-LOGOUT'>
+                  <controls>
+                    <control ref='ASVS-3.2' />
+                  </controls>
+                </weakness>
+              </weaknesses>
+              <controls />
+            </threat>
+          </threats>
+        </usecase>
+        <usecase ref='TRANSACTION AUTHENTICATION' name='Transaction Authentication' desc=''>
+          <threats>
+            <threat ref='CAPEC-62' name='Attackers could cause users to perform specific actions on their behalf through Cross Site Request Forgery attacks' state='Expose' owner='admin'>
+              <desc>Attackers could cause users to perform actions by exploiting Cross Site Request
+                                Forgery
+                                vulnerabilities. &amp;nbsp;This involves the attackers creating a malicious website
+                                that
+                                hosts a form or JavaScript designed to perform a POST or GET request against the
+                                target
+                                application.If the victim is logged into the target application, and then navigates
+                                to the
+                                attacker's malicious website, the form will be submitted and the operation performed
+                                by
+                                &amp;quot;riding&amp;quot; on the users existing session.
+                            </desc>
+              <riskRating confidentiality='50' integrity='50' availability='0' easeOfExploitation='50' />
+              <references />
+              <weaknesses>
+                <weakness ref='CWE-352'>
+                  <controls>
+                    <control ref='CWE-352-TOKENS' />
+                  </controls>
+                </weakness>
+                <weakness ref='CWE-306'>
+                  <controls>
+                    <control ref='RE-AUTH' />
+                  </controls>
+                </weakness>
+              </weaknesses>
+              <controls />
+            </threat>
+            <threat ref='CAPEC-103' name='Attackers cause users to peform arbitrary clicks on the site through ClickJacking attacks' state='Expose' owner='admin'>
+              <desc>In a clickjacking attack the victim is tricked into unknowingly initiating some action
+                                in one system while interacting with the UI from seemingly completely different system.
+                                While being logged in to some target system, the victim visits the attackers' malicious
+                                site which displays a UI that the victim wishes to interact with. In reality, the
+                                clickjacked page has a transparent layer above the visible UI with action controls that
+                                the attacker wishes the victim to execute. The victim clicks on buttons or other UI
+                                elements they see on the page which actually triggers the action controls in the
+                                transparent overlaying layer. Depending on what that action control is, the attacker may
+                                have just tricked the victim into executing some potentially privileged (and most
+                                certainly undesired) functionality in the target system to which the victim is
+                                authenticated. The basic problem here is that there is a dichotomy between what the
+                                victim thinks he's clicking on versus what he or she is actually clicking
+                                on.&lt;/br&gt;</desc>
+              <riskRating confidentiality='75' integrity='75' availability='0' easeOfExploitation='50' />
+              <references />
+              <weaknesses>
+                <weakness ref='CWE-693-CLICKJACK'>
+                  <controls>
+                    <control ref='@cwe-693-clickjack' />
+                  </controls>
+                </weakness>
+              </weaknesses>
+              <controls />
+            </threat>
+          </threats>
+        </usecase>
+      </usecases>
+    </component>
+  </components>
+</project>
