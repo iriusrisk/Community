@@ -6,5 +6,5 @@ IriusRisk relies on a knowledgebase of threat, weakness and countermeasure data.
 
 After creating a threat model, consider publishing it as a template so that it can be used by other users of the platform.
 
-[![\"Creative](\"https://i.creativecommons.org/l/by-sa/4.0/88x31.png\")](\"http://creativecommons.org/licenses/by-sa/4.0/\")  
-All models published as 'Templates' on this system will be anonymised and sensitive data removed and then licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](\"http://creativecommons.org/licenses/by-sa/4.0/\").
+![Creative Commmons](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)(http://creativecommons.org/licenses/by-sa/4.0/)  
+All models published as 'Templates' on this system will be anonymised and sensitive data removed and then licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
