@@ -1,5 +1,3 @@
-# IriusRisk Community Edition
-
 <img src="https://www.continuumsecurity.net/wp-content/uploads/2016/11/iriuslogo-notagline.png" width="600"/>
 
 [IriusRisk Community Edition](https://community.iriusrisk.com) is a free version of IriusRisk that allows you to quickly model software security risks using a template based approach, and then manage those risks throughout the rest of the SDLC, including:
@@ -15,7 +13,7 @@ If you have existing threat models in Microsoft Threat Modeller version 4 format
 ## Getting Started
 * Read our [Getting Started Guide](https://continuumsecurity.atlassian.net/wiki/display/ITD/Getting+started)
 * Sign up [on the community edition](https://community.iriusrisk.com)
-* Submit bugs and feature requests to this github issues tracker
+* Submit bugs and feature requests to github
 
 ## Try our commercial edition for these extra features
 * Manage more than 3 applications. The solution has been tested with 4000+ applications.
