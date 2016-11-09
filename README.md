@@ -19,6 +19,7 @@ If you have existing threat models in Microsoft Threat Modeller version 4 format
 * Read our [Getting Started Guide](https://continuumsecurity.atlassian.net/wiki/display/ITD/Getting+started)
 * Sign up [on the community edition](https://community.iriusrisk.com)
 * Submit bugs and feature requests to github
+* Join the [IriusRisk discussion forum](https://continuumsecurity.atlassian.net/wiki/display/ITD)
 
 ## Try our commercial edition for these extra features
 * Manage more than 3 applications. The solution has been tested with 4000+ applications.
