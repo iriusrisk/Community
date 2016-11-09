@@ -15,7 +15,7 @@
 All threat models created in IriusRisk can be exported and imported in an open XML format.  Additionally, you can publish your threat models as Templates, so that other users of the platform can re-use them.
 If you have existing threat models in Microsoft Threat Modeller version 4 format, you can import the threats and countermeasures via the "Add Artifact" feature on the Architecture tab.  (Support for the 2016 version is coming soon).
 
-A special thanks to <a href="https://hydrasit.com/">![HydrasIT](https://hydrasit.com/wp-content/uploads/2016/05/Hydras-Logo-white.png) the AWS Cloud Consulting Experts</a>, for providing the AWS Risk Pattern library that's included in the Community Edition.
+A special thanks to <a href="https://hydrasit.com/">![Hydras](https://hydrasit.com/wp-content/uploads/2015/12/Hydras-Logo.png) the AWS Cloud Consulting Experts</a>, for providing the AWS Risk Pattern library that's included in the Community Edition.
 
 ## Getting Started
 * Read our [Getting Started Guide](https://continuumsecurity.atlassian.net/wiki/display/ITD/Getting+started)
