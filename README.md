@@ -29,4 +29,4 @@ A special thanks to <a href="https://hydrasit.com/"><img src="https://hydrasit.c
 * Access to expanded risk patterns libraries such as PCI DSS v3.2
 * [Use our API](https://app.swaggerhub.com/api/continuumsecurity/IriusRisk/1) to embed IriusRisk as part of your SecDevOps pipeline and automatically import Cucumber, [BDD-Security](https://github.com/continuumsecurity/bdd-security) and OWASP ZAP scanning results
 * Import vulnerabilities from numerous SAST and DAST tools via [ThreadFix](https://www.threadfix.it)
-* See our [website for more details](https://www.continuumsecurity.net/iriusrisk)
+* See our [website for more details](https://www.continuumsecurity.net/threat-modeling-tool/)
