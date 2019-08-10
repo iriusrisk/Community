@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://www.continuumsecurity.net/wp-content/uploads/2016/11/iriuslogo-notagline.png" width="300"/>
+<img src="https://continuumsecurity.net/wp-content/uploads/2018/07/irius-logo.png" width="300"/>
 </p>
 
 [IriusRisk Community Edition](https://community.iriusrisk.com) is a free version of IriusRisk that allows you to quickly model software security risks using a template based approach, and then manage those risks throughout the rest of the SDLC, including:
@@ -7,9 +7,6 @@
 * Apply a security standard, such as OWASP ASVS to derive the security requirements in one step
 * Automatically upload security controls as requirements to Jira
 * Synchronise the current implementation state of the requirements with Jira and automatically adjust the associated risk rating
-<p align="center">
-<img src="https://www.continuumsecurity.net/wp-content/uploads/2016/11/sdlc-overview.png" width="400"/>
-</p>
 
 ## An open Threat Model platform
 All threat models created in IriusRisk can be published as Templates that are visible to other users of the platform.
