@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://continuumsecurity.net/wp-content/uploads/2018/07/irius-logo.png" width="300"/>
+<img src="https://pbs.twimg.com/profile_banners/3092406029/1562586842/1080x360"/>
 </p>
 
 [IriusRisk Community Edition](https://community.iriusrisk.com) is a free version of IriusRisk that allows you to quickly model software security risks using a template based approach, and then manage those risks throughout the rest of the SDLC, including:
