@@ -13,7 +13,9 @@ All threat models created in IriusRisk can be published as Templates that are vi
 If you have existing threat models in Microsoft Threat Modeller version 4 format, you can import the threats and countermeasures via the "Add Artifact" feature on the Architecture tab.  (Threat and Countermeasures are imported, but not dataflows).
 
 ## Getting Started
-* Registration for the Community Edition is suspended until 27 August 2019.  Follow [@IriusRisk](https://twitter.com/IriusRisk) for updates
+* Register for a user account at: [https://community.iriusrisk.com] 
+* If you're a user of the old version of Community, you can access your threat models and extract them from: [https://community-legacy.iriusrisk.com] 
+* Follow [@IriusRisk](https://twitter.com/IriusRisk) for updates
 * Submit bugs and feature requests to github
 
 ## Publishing Templates
