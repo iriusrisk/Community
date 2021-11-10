@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project ref="micro-sl-a-to-sl-t" name="Micro SL-A to SL-T" tags="" modelUpdated="2021-10-27 11:23:43" workflowState="" locked="false">
+  <desc/>
+  <diagram draft="false">
+    <schema>PG14R3JhcGhNb2RlbCBkeD0iMTc4NCIgZHk9Ijk2NiIgZ3JpZD0iMCIgZ3JpZFNpemU9IjEwIiBndWlkZXM9IjEiIHRvb2x0aXBzPSIxIiBjb25uZWN0PSIxIiBhcnJvd3M9IjEiIGZvbGQ9IjEiIHBhZ2U9IjAiIHBhZ2VTY2FsZT0iMSIgcGFnZVdpZHRoPSI4MjciIHBhZ2VIZWlnaHQ9IjExNjkiIG1hdGg9IjAiIHNoYWRvdz0iMCIgaXJEcmF3aW9WZXJzaW9uPSIzLjAuMC1TTkFQU0hPVCI+CiAgPHJvb3Q+CiAgICA8bXhDZWxsIGlkPSIwIi8+CiAgICA8bXhDZWxsIGlkPSIxIiBwYXJlbnQ9IjAiLz4KICAgIDxteENlbGwgaWQ9IjIiIHZhbHVlPSJpZWM2MjQ0My1zbDEiIHN0eWxlPSJlZGl0YWJsZT0wO2lyLnJlZj03NDFmMTk1MC0wNzdkLTQ1ZjAtOGI0Yi0wYjQ0MTUzODBhY2Y7cm91bmRlZD0xO3doaXRlU3BhY2U9d3JhcDtlZGl0YWJsZT0wO3JlY3Vyc2l2ZVJlc2l6ZT0wO2h0bWw9MTt2ZXJ0aWNhbEFsaWduPXRvcDthbGlnbj1sZWZ0O2Rhc2hlZD0xO3N0cm9rZVdpZHRoPTE7YXJjU2l6ZT0zO2Fic29sdXRlQXJjU2l6ZT0xO3NwYWNpbmdUb3A9MTtzcGFjaW5nTGVmdD0zMjtzdHJva2VDb2xvcj0jNzU3NUVCO2ZpbGxDb2xvcj0jRjBGMEZGO2ZpbGxPcGFjaXR5PTMwO2ZvbnRDb2xvcj0jNTY1MUUwO2Nvbm5lY3RhYmxlPTA7Y29udGFpbmVyPTE7c291cmNlPWlyaXVzcmlzaztpci50eXBlPVRSVVNUWk9ORTsiIHBhcmVudD0iMSIgdmVydGV4PSIxIiBpc1RodW1iPSIwIj4KICAgICAgPG14R2VvbWV0cnkgeD0iLTMyMiIgeT0iMzYiIHdpZHRoPSIyMzAiIGhlaWdodD0iMTgwIiBhcz0iZ2VvbWV0cnkiLz4KICAgIDwvbXhDZWxsPgogICAgPG14Q2VsbCBpZD0iMTAiIHZhbHVlPSJTTC1BIiBzdHlsZT0idGV4dDtodG1sPTE7YWxpZ249Y2VudGVyO3ZlcnRpY2FsQWxpZ249bWlkZGxlO3Jlc2l6YWJsZT0wO3BvaW50cz1bXTthdXRvc2l6ZT0xO2ZvbnRDb2xvcj0jOEM4QzhDO2ZvbnRTaXplPTIwOyIgcGFyZW50PSIyIiB2ZXJ0ZXg9IjEiPgogICAgICA8bXhHZW9tZXRyeSB4PSI5MyIgeT0iMTQ3IiB3aWR0aD0iNDYiIGhlaWdodD0iMjgiIGFzPSJnZW9tZXRyeSIvPgogICAgPC9teENlbGw+CiAgICA8bXhDZWxsIGlkPSIxMyIgdmFsdWU9IlNMMSBTTC1BIFNlcmlhbCBJbnRlcmZhY2UgLSBSUzQ4NSBQb3J0IiBzdHlsZT0iaXIucmVmPTE2NTQ5MGY0LWJjY2YtNGUxMi1hNTMyLThhZjlmNWY5ODI5YTtyb3VuZGVkPTE7d2hpdGVTcGFjZT13cmFwO2h0bWw9MTthbGlnbj1jZW50ZXI7aW1hZ2VBbGlnbj1jZW50ZXI7aW1hZ2VXaWR0aD04MjtpbWFnZUhlaWdodD04MjthcmNTaXplPTkwO2Fic29sdXRlQXJjU2l6ZT0xO3N0cm9rZUNvbG9yPSMyMEM5RTM7ZmlsbENvbG9yPSNFM0ZDRkM7Zm9udENvbG9yPSMwMDg0QUQ7Zm9udFNpemU9MTI7c291cmNlPWlyaXVzcmlzaztpci50eXBlPUNPTVBPTkVOVDtpci5jb21wb25lbnREZWZpbml0aW9uLnJlZj1zZXJpYWwtaW50ZXJmYWNlLXJzNDg1O3ZlcnRpY2FsTGFiZWxQb3NpdGlvbj1taWRkbGU7dmVydGljYWxBbGlnbj1taWRkbGU7aXIuc3luY2hyb25pemVkPTE7IiBwYXJlbnQ9IjIiIHZlcnRleD0iMSIgaXNUaHVtYj0iMCI+CiAgICAgIDxteEdlb21ldHJ5IHg9IjcxIiB5PSI0NSIgd2lkdGg9IjkwIiBoZWlnaHQ9IjkwIiBhcz0iZ2VvbWV0cnkiLz4KICAgIDwvbXhDZWxsPgogICAgPG14Q2VsbCBpZD0iMyIgdmFsdWU9ImllYzYyNDQzLXNsMiIgc3R5bGU9ImVkaXRhYmxlPTA7aXIucmVmPTRhY2Q0ZWQ3LWQxNzYtNGQ1MC05ODk2LWIxNmZhZjIwOTI0Yztyb3VuZGVkPTE7d2hpdGVTcGFjZT13cmFwO2VkaXRhYmxlPTA7cmVjdXJzaXZlUmVzaXplPTA7aHRtbD0xO3ZlcnRpY2FsQWxpZ249dG9wO2FsaWduPWxlZnQ7ZGFzaGVkPTE7c3Ryb2tlV2lkdGg9MTthcmNTaXplPTM7YWJzb2x1dGVBcmNTaXplPTE7c3BhY2luZ1RvcD0xO3NwYWNpbmdMZWZ0PTMyO3N0cm9rZUNvbG9yPSM3NTc1RUI7ZmlsbENvbG9yPSNGMEYwRkY7ZmlsbE9wYWNpdHk9MzA7Zm9udENvbG9yPSM1NjUxRTA7Y29ubmVjdGFibGU9MDtjb250YWluZXI9MTtzb3VyY2U9aXJpdXNyaXNrO2lyLnR5cGU9VFJVU1RaT05FOyIgcGFyZW50PSIxIiB2ZXJ0ZXg9IjEiIGlzVGh1bWI9IjAiPgogICAgICA8bXhHZW9tZXRyeSB4PSItNzMiIHk9IjM2IiB3aWR0aD0iMjMwIiBoZWlnaHQ9IjE4MCIgYXM9Imdlb21ldHJ5Ii8+CiAgICA8L214Q2VsbD4KICAgIDxteENlbGwgaWQ9IjExIiB2YWx1ZT0iU0wtVCIgc3R5bGU9InRleHQ7aHRtbD0xO2FsaWduPWNlbnRlcjt2ZXJ0aWNhbEFsaWduPW1pZGRsZTtyZXNpemFibGU9MDtwb2ludHM9W107YXV0b3NpemU9MTtmb250Q29sb3I9IzhDOEM4Qztmb250U2l6ZT0yMDsiIHBhcmVudD0iMyIgdmVydGV4PSIxIj4KICAgICAgPG14R2VvbWV0cnkgeD0iOTMiIHk9IjE0NCIgd2lkdGg9IjQ1IiBoZWlnaHQ9IjI4IiBhcz0iZ2VvbWV0cnkiLz4KICAgIDwvbXhDZWxsPgogICAgPG14Q2VsbCBpZD0iMTIiIHZhbHVlPSJTTDIgU0wtVCBTZXJpYWwgSW50ZXJmYWNlIC0gUlM0ODUgUG9ydCIgc3R5bGU9ImlyLnJlZj1jMTFjYWU0Yy0yN2Q0LTQyYmEtYmE4MS00ZWQxNmY3NWQwNmY7cm91bmRlZD0xO3doaXRlU3BhY2U9d3JhcDtodG1sPTE7YWxpZ249Y2VudGVyO2ltYWdlQWxpZ249Y2VudGVyO2ltYWdlV2lkdGg9ODI7aW1hZ2VIZWlnaHQ9ODI7YXJjU2l6ZT05MDthYnNvbHV0ZUFyY1NpemU9MTtzdHJva2VDb2xvcj0jMjBDOUUzO2ZpbGxDb2xvcj0jRTNGQ0ZDO2ZvbnRDb2xvcj0jMDA4NEFEO2ZvbnRTaXplPTEyO3NvdXJjZT1pcml1c3Jpc2s7aXIudHlwZT1DT01QT05FTlQ7aXIuY29tcG9uZW50RGVmaW5pdGlvbi5yZWY9c2VyaWFsLWludGVyZmFjZS1yczQ4NTt2ZXJ0aWNhbExhYmVsUG9zaXRpb249bWlkZGxlO3ZlcnRpY2FsQWxpZ249bWlkZGxlO2lyLnN5bmNocm9uaXplZD0xOyIgcGFyZW50PSIzIiB2ZXJ0ZXg9IjEiIGlzVGh1bWI9IjAiPgogICAgICA8bXhHZW9tZXRyeSB4PSI3MC41IiB5PSI0NSIgd2lkdGg9IjkwIiBoZWlnaHQ9IjkwIiBhcz0iZ2VvbWV0cnkiLz4KICAgIDwvbXhDZWxsPgogICAgPG14Q2VsbCBpZD0iMTQiIHZhbHVlPSJTaW5nbGUgQ29tcG9uZW50IC0gQXJjaGl2ZWQgU2VjdXJpdHkgTGV2ZWwgKFNMMSkgdG8gVGFyZ2V0IFNlY3VyaXR5IExldmVsIChTTDIpIiBzdHlsZT0idGV4dDtodG1sPTE7YWxpZ249Y2VudGVyO3ZlcnRpY2FsQWxpZ249bWlkZGxlO3Jlc2l6YWJsZT0wO3BvaW50cz1bXTthdXRvc2l6ZT0xO2ZvbnRDb2xvcj0jOEM4QzhDO2ZvbnRTaXplPTE1OyIgdmVydGV4PSIxIiBwYXJlbnQ9IjEiPgogICAgICA8bXhHZW9tZXRyeSB4PSItMzMzIiB5PSItNiIgd2lkdGg9IjUwMCIgaGVpZ2h0PSIyMiIgYXM9Imdlb21ldHJ5Ii8+CiAgICA8L214Q2VsbD4KICA8L3Jvb3Q+CjwvbXhHcmFwaE1vZGVsPgo=</schema>
+  </diagram>
+  <trustZones>
+    <trustZone ref="iec62443-sl2" uuid="4acd4ed7-d176-4d50-9896-b16faf20924c" name="iec62443-sl2" desc="" trustRating="2"/>
+    <trustZone ref="iec62443-sl1" uuid="741f1950-077d-45f0-8b4b-0b4415380acf" name="iec62443-sl1" desc="" trustRating="1"/>
+  </trustZones>
+  <questions/>
+  <assets/>
+  <settings>
+    <issueTrackers>
+      <jira>
+        <fields/>
+      </jira>
+    </issueTrackers>
+  </settings>
+  <dataflows/>
+  <customFields/>
+  <components>
+    <component uuid="10b9f6bd-a090-44ae-a7ab-6315faee4595" diagramComponentId="c11cae4c-27d4-42ba-ba81-4ed16f75d06f" ref="8649285b-115e-4509-8e40-7716c52fca33" name="SL2 SL-T Serial Interface - RS485 Port" desc="" library="iec62443" parentComponentRef="" componentDefinitionRef="serial-interface-rs485">
+      <tags/>
+      <questions/>
+      <trustZones>
+        <trustZone ref="iec62443-sl2"/>
+      </trustZones>
+      <assets/>
+      <settings>
+        <issueTrackers>
+          <jira>
+            <fields/>
+          </jira>
+        </issueTrackers>
+      </settings>
+      <weaknesses>
+        <weakness ref="CWE-300" name="Channel Accessible by Non-Endpoint ('Man-in-the-Middle')" state="0" impact="100" issueId="">
+          <desc>The product does not adequately verify the identity of actors at both ends of a communication channel, or does not adequately ensure the integrity of the channel, in a way that allows the channel to be accessed or influenced by an actor that is not an endpoint.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2021-02-01T11:01:31.000">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-209" name="Information Exposure Through an Error Message" state="0" impact="100" issueId="">
+          <desc>The software generates an error message that includes sensitive information about its environment, users, or associated data.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2021-02-01T11:01:31.000">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-1100" name="Insufficient Isolation of System-Dependent Functions" state="0" impact="100" issueId="">
+          <desc>The product or code does not isolate system-dependent
+					functionality into separate stand-alone modules.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2021-02-01T11:01:31.000">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-778" name="Insufficient Logging" state="0" impact="100" issueId="">
+          <desc>When a security-critical event occurs, the software either does not record the event or omits important details about the event when logging it.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2021-02-01T11:01:31.000">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-5" name="J2EE Misconfiguration: Data Transmission Without Encryption" state="0" impact="100" issueId="">
+          <desc>Information sent over a network can be compromised while in transit. An attacker may be able to read or modify the contents if the data are sent in plaintext or are weakly encrypted.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2021-02-01T11:01:31.000">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-693" name="Protection Mechanism Failure" state="0" impact="100" issueId="">
+          <desc>The product does not use or incorrectly uses a protection mechanism that provides sufficient defence against directed attacks against the product.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2021-02-01T11:01:31.000">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+      </weaknesses>
+      <countermeasures>
+        <countermeasure ref="continuous_monitor_accepted_sec" name="Assets shall provide the capability to be continuously monitored using commonly accepted security industry practices and recommendations to detect, characterize and report security breaches in a timely manner." issueId="" platform="" cost="0" risk="69" state="Required" owner="cnmarrow" library="iec62443" source="RULES" edited="false">
+          <desc>1. Control system monitoring capability can be achieved through a variety of tools and
+techniques (for example, IDS, IPS, malicious code protection mechanisms and network monitoring mechanisms).
+2. Monitoring devices should be strategically deployed within the control system (for example, at
+selected perimeter locations and near server farms supporting critical applications) to collect
+essential information. Monitoring mechanisms may also be deployed at ad hoc locations
+within the control system to track specific transactions
+3. SIEM Implementation</desc>
+          <implementations/>
+          <references/>
+          <standards>
+            <standard ref="10.4" supportedStandardRef="iec-62443-3-3:2013"/>
+          </standards>
+          <customFields/>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2021-02-01T11:01:31.000">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </countermeasure>
+        <countermeasure ref="create_timestamps_for_audit_records" name="Assets shall provide the capability to create timestamps (including date and time) for use in audit records." issueId="" platform="" cost="0" risk="32" state="Implemented" owner="cnmarrow" library="iec62443" source="RULES" edited="false">
+          <desc>Timestamps (including date and time) of audit records should be generated using internal
+system clocks.
+1. provide timestamps for use in audit record generation.</desc>
+          <implementations/>
+          <references/>
+          <standards>
+            <standard ref="6.13" supportedStandardRef="iec-62443-3-3:2013"/>
+          </standards>
+          <customFields/>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2021-02-01T11:01:31.000">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </countermeasure>
+        <countermeasure ref="create_timestamps_sync_with_sys_wide_timesrc" name="Assets shall provide the capability to create timestamps that are synchronized with a system wide time source." issueId="" platform="" cost="0" risk="32" state="Required" owner="cnmarrow" library="iec62443" source="RULES" edited="false">
+          <desc>to synchronize internal system clocks at a configurable frequency.</desc>
+          <implementations/>
+          <references/>
+          <standards>
+            <standard ref="6.13" supportedStandardRef="iec-62443-3-3:2013"/>
+          </standards>
+          <customFields/>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2021-02-01T11:01:31.000">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </countermeasure>
+        <countermeasure ref="maintain_essential_functions" name="Assets shall provide the capability to maintain essential functions when operating in a degraded mode as the result of a DoS event." issueId="" platform="" cost="0" risk="39" state="Required" owner="cnmarrow" library="iec62443" source="RULES" edited="false">
+          <desc>provide the capability to manage communication loads (such as
+using rate limiting) to mitigate the effects of information flooding types of DoS events.</desc>
+          <implementations/>
+          <references/>
+          <standards>
+            <standard ref="11.3" supportedStandardRef="iec-62443-3-3:2013"/>
+          </standards>
+          <customFields/>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2021-02-01T11:01:31.000">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </countermeasure>
+        <countermeasure ref="id_and_handle_error_conditions" name="The asset shall identify and handle error conditions in a manner such that effective remediation can occur. This shall be done in a manner which does not provide information that could be exploited by adversaries to attack the IACS unless revealing this information is necessary for the timely troubleshooting of problems." issueId="" platform="" cost="0" risk="0" state="Implemented" owner="cnmarrow" library="iec62443" source="RULES" edited="false">
+          <desc>1. Error messages generated by the control system should provide timely and useful information without revealing potentially harmful information.
+2. Vulnerability Assessment &amp; Penetration Testing</desc>
+          <implementations/>
+          <references/>
+          <standards>
+            <standard ref="7.9" supportedStandardRef="iec-62443-3-3:2013"/>
+          </standards>
+          <customFields/>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2021-02-01T11:01:31.000">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </countermeasure>
+        <countermeasure ref="employ_cypto_mechs_to_recognize_changes" name="The asset shall provide the capability to employ cryptographic mechanisms to recognize changes to information during communication." issueId="" platform="" cost="0" risk="36" state="Required" owner="cnmarrow" library="iec62443" source="RULES" edited="false">
+          <desc>1. The control system shall provide the capability to protect the integrity of transmitted information.
+2. The control system shall provide the capability to employ cryptographic mechanisms to recognize changes to information during communication.</desc>
+          <implementations/>
+          <references/>
+          <standards>
+            <standard ref="7.3" supportedStandardRef="iec-62443-3-3:2013"/>
+          </standards>
+          <customFields/>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2021-02-01T11:01:31.000">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </countermeasure>
+        <countermeasure ref="gen_audit_record_relevant_to_sec_for_cat" name="The asset shall provide the capability to generate audit records relevant to security for the following categories: access control, request errors, operating system events, asset events, backup and restore events, configuration changes, potential reconnaissance activity and audit log events. Individual audit records shall include the timestamp, source (originating device, software process or human user account), category, type, event ID and event result." issueId="" platform="" cost="0" risk="0" state="Implemented" owner="cnmarrow" library="iec62443" source="RULES" edited="false">
+          <desc>Generate audit records relevant to security for the following categories: access control, request errors, operating system events, control system events, backup and restore events, configuration changes, potential reconnaissance activity and audit log events. Individual audit records shall include the timestamp, source (originating device, software process or human user account), category, type, event ID and event result.</desc>
+          <implementations/>
+          <references/>
+          <standards>
+            <standard ref="6.10" supportedStandardRef="iec-62443-3-3:2013"/>
+          </standards>
+          <customFields/>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2021-02-01T11:01:31.000">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </countermeasure>
+        <countermeasure ref="mitigate_info_effects_flooding_types" name="The asset shall provide the capability to manage communication loads (such as using rate limiting) to mitigate the effects of information flooding types of DoS events." issueId="" platform="" cost="0" risk="39" state="Implemented" owner="cnmarrow" library="iec62443" source="RULES" edited="false">
+          <desc>1. boundary protection
+2. restricting the information flow to be unidirectional outbound
+3. manage communication loads (such as using rate limiting) to mitigate the effects of information flooding types of DoS events.
+4. restrict the ability of all users (humans, software processes and devices) to cause DoS events which affect other control systems or networks.</desc>
+          <implementations/>
+          <references/>
+          <standards>
+            <standard ref="11.3" supportedStandardRef="iec-62443-3-3:2013"/>
+          </standards>
+          <customFields/>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2021-02-01T11:01:31.000">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </countermeasure>
+        <countermeasure ref="protect_integrity_transmitted_info" name="The asset shall provide the capability to protect the integrity of transmitted information." issueId="" platform="" cost="0" risk="36" state="Implemented" owner="cnmarrow" library="iec62443" source="RULES" edited="false">
+          <desc>1. The control system shall provide the capability to protect the integrity of transmitted information.
+2. The control system shall provide the capability to employ cryptographic mechanisms to recognize changes to information during communication.</desc>
+          <implementations/>
+          <references/>
+          <standards>
+            <standard ref="7.3" supportedStandardRef="iec-62443-3-3:2013"/>
+          </standards>
+          <customFields/>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2021-02-01T11:01:31.000">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </countermeasure>
+        <countermeasure ref="report_current_list_of_installed_assets" name="The asset shall provide the capability to report the current list of installed assets and their associated properties." issueId="" platform="" cost="0" risk="68" state="Required" owner="cnmarrow" library="iec62443" source="RULES" edited="false">
+          <desc>1. Usage of component ID, capability and revision level.
+2. Formal process of configuration management should be deployed to keep control of the
+changes in the component inventory baseline
+3. The system requires all default passwords and pass phrases to be changed in order to complete the setup, prior to being operational.  This includes SSID passphrases, default accounts, admin accounts, etc.</desc>
+          <implementations/>
+          <references/>
+          <standards>
+            <standard ref="11.10" supportedStandardRef="iec-62443-3-3:2013"/>
+          </standards>
+          <customFields/>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2021-02-01T11:01:31.000">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </countermeasure>
+      </countermeasures>
+      <usecases>
+        <usecase ref="common-sl2-cr2-11" name="SL2 - Common - CR2.11" desc="" library="iec62443">
+          <threats>
+            <threat ref="cr2-11-an_adversary_compromises_a_system_without_knowing_when_he_compromised_it" name="An adversary compromises a system without knowing when he compromised it." state="Partly-Mitigate" source="RULES" edited="false" owner="cnmarrow" library="iec62443" editable="true">
+              <desc/>
+              <riskRating confidentiality="75" integrity="50" availability="50" easeOfExploitation="50"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-778">
+                  <countermeasures>
+                    <countermeasure ref="create_timestamps_for_audit_records" mitigation="50"/>
+                    <countermeasure ref="create_timestamps_sync_with_sys_wide_timesrc" mitigation="50"/>
+                  </countermeasures>
+                </weakness>
+              </weaknesses>
+              <countermeasures>
+                <countermeasure ref="create_timestamps_for_audit_records" mitigation="50"/>
+                <countermeasure ref="create_timestamps_sync_with_sys_wide_timesrc" mitigation="50"/>
+              </countermeasures>
+              <customFields/>
+            </threat>
+          </threats>
+        </usecase>
+        <usecase ref="common-sl2-cr2-8" name="SL2 - Common - CR2.8" desc="" library="iec62443">
+          <threats>
+            <threat ref="cr2-8-an_aversary_could_have_compromised_the_sytem_without_you_knowing" name="An adversary could have compromised the system without you knowing what part in the asset was compromised or how he compromised the asset " state="Mitigate" source="RULES" edited="false" owner="cnmarrow" library="iec62443" editable="true">
+              <desc/>
+              <riskRating confidentiality="75" integrity="100" availability="75" easeOfExploitation="75"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-778">
+                  <countermeasures>
+                    <countermeasure ref="gen_audit_record_relevant_to_sec_for_cat" mitigation="100"/>
+                  </countermeasures>
+                </weakness>
+              </weaknesses>
+              <countermeasures>
+                <countermeasure ref="gen_audit_record_relevant_to_sec_for_cat" mitigation="100"/>
+              </countermeasures>
+              <customFields/>
+            </threat>
+          </threats>
+        </usecase>
+        <usecase ref="common-sl2-cr3-1" name="SL2 - Common - CR3.1" desc="" library="iec62443">
+          <threats>
+            <threat ref="cr3-1-adv_intercept_netw_traffic" name="An adversary can intercept network traffic" state="Partly-Mitigate" source="RULES" edited="false" owner="cnmarrow" library="iec62443" editable="true">
+              <desc/>
+              <riskRating confidentiality="100" integrity="25" availability="100" easeOfExploitation="75"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-5">
+                  <countermeasures>
+                    <countermeasure ref="employ_cypto_mechs_to_recognize_changes" mitigation="50"/>
+                    <countermeasure ref="protect_integrity_transmitted_info" mitigation="50"/>
+                  </countermeasures>
+                </weakness>
+              </weaknesses>
+              <countermeasures>
+                <countermeasure ref="employ_cypto_mechs_to_recognize_changes" mitigation="50"/>
+                <countermeasure ref="protect_integrity_transmitted_info" mitigation="50"/>
+              </countermeasures>
+              <customFields/>
+            </threat>
+          </threats>
+        </usecase>
+        <usecase ref="common-sl2-cr3-7" name="SL2 - Common - CR3.7" desc="" library="iec62443">
+          <threats>
+            <threat ref="cr3-7-adv_disclose_info_via_error_msg" name="An adversary can use error messages that contain too much information, such as stack traces, to discover vulnerabilities in the running service." state="Mitigate" source="RULES" edited="false" owner="cnmarrow" library="iec62443" editable="true">
+              <desc/>
+              <riskRating confidentiality="75" integrity="50" availability="50" easeOfExploitation="75"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-209">
+                  <countermeasures>
+                    <countermeasure ref="id_and_handle_error_conditions" mitigation="100"/>
+                  </countermeasures>
+                </weakness>
+              </weaknesses>
+              <countermeasures>
+                <countermeasure ref="id_and_handle_error_conditions" mitigation="100"/>
+              </countermeasures>
+              <customFields/>
+            </threat>
+          </threats>
+        </usecase>
+        <usecase ref="common-sl2-cr6-2" name="SL2 - Common - CR6.2" desc="" library="iec62443">
+          <threats>
+            <threat ref="cr6-2-continuous_monitoring_exploit" name="An adversary compromises a system  without it being timely notified and detected by for example a IDS" state="Expose" source="RULES" edited="false" owner="cnmarrow" library="iec62443" editable="true">
+              <desc/>
+              <riskRating confidentiality="50" integrity="50" availability="75" easeOfExploitation="75"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-693">
+                  <countermeasures>
+                    <countermeasure ref="continuous_monitor_accepted_sec" mitigation="100"/>
+                  </countermeasures>
+                </weakness>
+              </weaknesses>
+              <countermeasures>
+                <countermeasure ref="continuous_monitor_accepted_sec" mitigation="100"/>
+              </countermeasures>
+              <customFields/>
+            </threat>
+          </threats>
+        </usecase>
+        <usecase ref="common-sl2-cr7-1" name="SL2 - Common - CR7.1" desc="" library="iec62443">
+          <threats>
+            <threat ref="cr7-1-dos_no_protect" name="Assets might lose the capability to maintain essential functions when operating in a degraded mode as the result of a DoS event.&#10;" state="Partly-Mitigate" source="RULES" edited="false" owner="cnmarrow" library="iec62443" editable="true">
+              <desc/>
+              <riskRating confidentiality="25" integrity="25" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-1100">
+                  <countermeasures>
+                    <countermeasure ref="maintain_essential_functions" mitigation="50"/>
+                    <countermeasure ref="mitigate_info_effects_flooding_types" mitigation="50"/>
+                  </countermeasures>
+                </weakness>
+              </weaknesses>
+              <countermeasures>
+                <countermeasure ref="maintain_essential_functions" mitigation="50"/>
+                <countermeasure ref="mitigate_info_effects_flooding_types" mitigation="50"/>
+              </countermeasures>
+              <customFields/>
+            </threat>
+          </threats>
+        </usecase>
+        <usecase ref="common-sl2-cr7-8" name="SL2 - Common - CR7.8" desc="" library="iec62443">
+          <threats>
+            <threat ref="cr7-8-rogue_assets" name="Rogue assets might enter the network as a result of not being able to verify component identities." state="Expose" source="RULES" edited="false" owner="cnmarrow" library="iec62443" editable="true">
+              <desc/>
+              <riskRating confidentiality="100" integrity="100" availability="50" easeOfExploitation="50"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-300">
+                  <countermeasures>
+                    <countermeasure ref="report_current_list_of_installed_assets" mitigation="100"/>
+                  </countermeasures>
+                </weakness>
+              </weaknesses>
+              <countermeasures>
+                <countermeasure ref="report_current_list_of_installed_assets" mitigation="100"/>
+              </countermeasures>
+              <customFields/>
+            </threat>
+          </threats>
+        </usecase>
+      </usecases>
+    </component>
+    <component uuid="e339b873-9ada-4ac7-8191-3efec545054b" diagramComponentId="165490f4-bccf-4e12-a532-8af9f5f9829a" ref="9dc389c2-a13b-4869-8bfc-d804c312f530" name="SL1 SL-A Serial Interface - RS485 Port" desc="" library="iec62443" parentComponentRef="" componentDefinitionRef="serial-interface-rs485">
+      <tags/>
+      <questions/>
+      <trustZones>
+        <trustZone ref="iec62443-sl1"/>
+      </trustZones>
+      <assets/>
+      <settings>
+        <issueTrackers>
+          <jira>
+            <fields/>
+          </jira>
+        </issueTrackers>
+      </settings>
+      <weaknesses>
+        <weakness ref="CWE-209" name="Information Exposure Through an Error Message" state="0" impact="100" issueId="">
+          <desc>The software generates an error message that includes sensitive information about its environment, users, or associated data.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2021-02-01T11:01:31.000">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-1100" name="Insufficient Isolation of System-Dependent Functions" state="0" impact="100" issueId="">
+          <desc>The product or code does not isolate system-dependent
+					functionality into separate stand-alone modules.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2021-02-01T11:01:31.000">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-778" name="Insufficient Logging" state="0" impact="100" issueId="">
+          <desc>When a security-critical event occurs, the software either does not record the event or omits important details about the event when logging it.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2021-02-01T11:01:31.000">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-5" name="J2EE Misconfiguration: Data Transmission Without Encryption" state="0" impact="100" issueId="">
+          <desc>Information sent over a network can be compromised while in transit. An attacker may be able to read or modify the contents if the data are sent in plaintext or are weakly encrypted.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2021-02-01T11:01:31.000">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+      </weaknesses>
+      <countermeasures>
+        <countermeasure ref="create_timestamps_for_audit_records" name="Assets shall provide the capability to create timestamps (including date and time) for use in audit records." issueId="" platform="" cost="0" risk="0" state="Implemented" owner="cnmarrow" library="iec62443" source="RULES" edited="false">
+          <desc>Timestamps (including date and time) of audit records should be generated using internal
+system clocks.
+1. provide timestamps for use in audit record generation.</desc>
+          <implementations/>
+          <references/>
+          <standards>
+            <standard ref="6.13" supportedStandardRef="iec-62443-3-3:2013"/>
+          </standards>
+          <customFields/>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2021-02-01T11:01:31.000">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </countermeasure>
+        <countermeasure ref="maintain_essential_functions" name="Assets shall provide the capability to maintain essential functions when operating in a degraded mode as the result of a DoS event." issueId="" platform="" cost="0" risk="0" state="Implemented" owner="cnmarrow" library="iec62443" source="RULES" edited="false">
+          <desc>provide the capability to manage communication loads (such as
+using rate limiting) to mitigate the effects of information flooding types of DoS events.</desc>
+          <implementations/>
+          <references/>
+          <standards>
+            <standard ref="11.3" supportedStandardRef="iec-62443-3-3:2013"/>
+          </standards>
+          <customFields/>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2021-02-01T11:01:31.000">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </countermeasure>
+        <countermeasure ref="id_and_handle_error_conditions" name="The asset shall identify and handle error conditions in a manner such that effective remediation can occur. This shall be done in a manner which does not provide information that could be exploited by adversaries to attack the IACS unless revealing this information is necessary for the timely troubleshooting of problems." issueId="" platform="" cost="0" risk="0" state="Implemented" owner="cnmarrow" library="iec62443" source="RULES" edited="false">
+          <desc>1. Error messages generated by the control system should provide timely and useful information without revealing potentially harmful information.
+2. Vulnerability Assessment &amp; Penetration Testing</desc>
+          <implementations/>
+          <references/>
+          <standards>
+            <standard ref="7.9" supportedStandardRef="iec-62443-3-3:2013"/>
+          </standards>
+          <customFields/>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2021-02-01T11:01:31.000">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </countermeasure>
+        <countermeasure ref="gen_audit_record_relevant_to_sec_for_cat" name="The asset shall provide the capability to generate audit records relevant to security for the following categories: access control, request errors, operating system events, asset events, backup and restore events, configuration changes, potential reconnaissance activity and audit log events. Individual audit records shall include the timestamp, source (originating device, software process or human user account), category, type, event ID and event result." issueId="" platform="" cost="0" risk="0" state="Implemented" owner="cnmarrow" library="iec62443" source="RULES" edited="false">
+          <desc>Generate audit records relevant to security for the following categories: access control, request errors, operating system events, control system events, backup and restore events, configuration changes, potential reconnaissance activity and audit log events. Individual audit records shall include the timestamp, source (originating device, software process or human user account), category, type, event ID and event result.</desc>
+          <implementations/>
+          <references/>
+          <standards>
+            <standard ref="6.10" supportedStandardRef="iec-62443-3-3:2013"/>
+          </standards>
+          <customFields/>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2021-02-01T11:01:31.000">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </countermeasure>
+        <countermeasure ref="protect_integrity_transmitted_info" name="The asset shall provide the capability to protect the integrity of transmitted information." issueId="" platform="" cost="0" risk="0" state="Implemented" owner="cnmarrow" library="iec62443" source="RULES" edited="false">
+          <desc>1. The control system shall provide the capability to protect the integrity of transmitted information.
+2. The control system shall provide the capability to employ cryptographic mechanisms to recognize changes to information during communication.</desc>
+          <implementations/>
+          <references/>
+          <standards>
+            <standard ref="7.3" supportedStandardRef="iec-62443-3-3:2013"/>
+          </standards>
+          <customFields/>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2021-02-01T11:01:31.000">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </countermeasure>
+      </countermeasures>
+      <usecases>
+        <usecase ref="common-sl1-cr2-11" name="SL1 - Common - CR2.11" desc="" library="iec62443">
+          <threats>
+            <threat ref="cr2-11-an_adversary_compromises_a_system_without_knowing_when_he_compromised_it" name="An adversary compromises a system without knowing when he compromised it." state="Mitigate" source="RULES" edited="false" owner="cnmarrow" library="iec62443" editable="true">
+              <desc/>
+              <riskRating confidentiality="75" integrity="50" availability="50" easeOfExploitation="50"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-778">
+                  <countermeasures>
+                    <countermeasure ref="create_timestamps_for_audit_records" mitigation="100"/>
+                  </countermeasures>
+                </weakness>
+              </weaknesses>
+              <countermeasures>
+                <countermeasure ref="create_timestamps_for_audit_records" mitigation="100"/>
+              </countermeasures>
+              <customFields/>
+            </threat>
+          </threats>
+        </usecase>
+        <usecase ref="common-sl1-cr2-8" name="SL1 - Common - CR2.8" desc="" library="iec62443">
+          <threats>
+            <threat ref="cr2-8-an_aversary_could_have_compromised_the_sytem_without_you_knowing" name="An adversary could have compromised the system without you knowing what part in the asset was compromised or how he compromised the asset " state="Mitigate" source="RULES" edited="false" owner="cnmarrow" library="iec62443" editable="true">
+              <desc/>
+              <riskRating confidentiality="75" integrity="100" availability="75" easeOfExploitation="75"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-778">
+                  <countermeasures>
+                    <countermeasure ref="gen_audit_record_relevant_to_sec_for_cat" mitigation="100"/>
+                  </countermeasures>
+                </weakness>
+              </weaknesses>
+              <countermeasures>
+                <countermeasure ref="gen_audit_record_relevant_to_sec_for_cat" mitigation="100"/>
+              </countermeasures>
+              <customFields/>
+            </threat>
+          </threats>
+        </usecase>
+        <usecase ref="common-sl1-cr3-1" name="SL1 - Common - CR3.1" desc="" library="iec62443">
+          <threats>
+            <threat ref="cr3-1-adv_intercept_netw_traffic" name="An adversary can intercept network traffic" state="Mitigate" source="RULES" edited="false" owner="cnmarrow" library="iec62443" editable="true">
+              <desc/>
+              <riskRating confidentiality="100" integrity="25" availability="100" easeOfExploitation="75"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-5">
+                  <countermeasures>
+                    <countermeasure ref="protect_integrity_transmitted_info" mitigation="100"/>
+                  </countermeasures>
+                </weakness>
+              </weaknesses>
+              <countermeasures>
+                <countermeasure ref="protect_integrity_transmitted_info" mitigation="100"/>
+              </countermeasures>
+              <customFields/>
+            </threat>
+          </threats>
+        </usecase>
+        <usecase ref="common-sl1-cr3-7" name="SL1 - Common - CR3.7" desc="" library="iec62443">
+          <threats>
+            <threat ref="cr3-7-adv_disclose_info_via_error_msg" name="An adversary can use error messages that contain too much information, such as stack traces, to discover vulnerabilities in the running service." state="Mitigate" source="RULES" edited="false" owner="cnmarrow" library="iec62443" editable="true">
+              <desc/>
+              <riskRating confidentiality="75" integrity="50" availability="50" easeOfExploitation="75"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-209">
+                  <countermeasures>
+                    <countermeasure ref="id_and_handle_error_conditions" mitigation="100"/>
+                  </countermeasures>
+                </weakness>
+              </weaknesses>
+              <countermeasures>
+                <countermeasure ref="id_and_handle_error_conditions" mitigation="100"/>
+              </countermeasures>
+              <customFields/>
+            </threat>
+          </threats>
+        </usecase>
+        <usecase ref="common-sl1-cr7-1" name="SL1 - Common - CR7.1" desc="" library="iec62443">
+          <threats>
+            <threat ref="cr7-1-dos_no_protect" name="Assets might lose the capability to maintain essential functions when operating in a degraded mode as the result of a DoS event.&#10;" state="Mitigate" source="RULES" edited="false" owner="cnmarrow" library="iec62443" editable="true">
+              <desc/>
+              <riskRating confidentiality="25" integrity="25" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-1100">
+                  <countermeasures>
+                    <countermeasure ref="maintain_essential_functions" mitigation="100"/>
+                  </countermeasures>
+                </weakness>
+              </weaknesses>
+              <countermeasures>
+                <countermeasure ref="maintain_essential_functions" mitigation="100"/>
+              </countermeasures>
+              <customFields/>
+            </threat>
+          </threats>
+        </usecase>
+      </usecases>
+    </component>
+  </components>
+  <threadFixScans/>
+</project>
