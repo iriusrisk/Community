@@ -1,0 +1,1723 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library ref="stride" name="STRIDE with CAPEC" revision="1" tags="">
+  <desc/>
+  <categoryComponents/>
+  <componentDefinitions/>
+  <supportedStandards/>
+  <riskPatterns>
+    <riskPattern uuid="24bf8682-de85-4f81-9415-f423750a896f" ref="denial-of-service" name="Denial of Service" desc="">
+      <tags>
+        <tag tag="Denial of Service"/>
+      </tags>
+      <weaknesses>
+        <weakness ref="CWE-1325" name="Improperly Controlled Sequential Memory Allocation" state="0" impact="100">
+          <desc>The product manages a group of objects or resources and performs a separate memory allocation for each object, but it does not properly limit the total amount of memory that is consumed by all of the combined objects.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:14.805">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-404" name="Improper Resource Shutdown or Release" state="0" impact="100">
+          <desc>The program does not release or incorrectly releases a resource before it is made available for re-use.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:14.843">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-645" name="Overly Restrictive Account Lockout Mechanism" state="0" impact="100">
+          <desc>The software contains an account lockout protection mechanism, but the mechanism is too restrictive and can be triggered too easily, which allows attackers to deny service to legitimate users by causing their accounts to be locked out.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:14.848">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-770" name="Allocation of Resources Without Limits or Throttling" state="0" impact="100">
+          <desc>The software allocates a reusable resource or group of resources on behalf of an actor without imposing any restrictions on the size or number of resources that can be allocated, in violation of the intended security policy for that actor.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:14.853">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+      </weaknesses>
+      <countermeasures/>
+      <usecases>
+        <usecase ref="denial-of-service" name="Denial of Service" desc="" library="">
+          <threats>
+            <threat ref="capec-125-flooding" name="CAPEC-125 Flooding" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An adversary consumes the resources of a target by rapidly engaging in a large number of interactions with the target. This type of attack generally exposes a weakness in rate limiting or flow. When successful this attack prevents legitimate users from accessing the service and can cause the target to crash. This attack differs from resource depletion through leaks or allocations in that the latter attacks do not rely on the volume of requests made to the target but instead focus on manipulation of the target's operations. The key factor in a flooding attack is the number of requests the adversary can make in a given period of time. The greater this number, the more likely an attack is to succeed against a given target.</desc>
+              <riskRating confidentiality="50" integrity="50" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-404">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-770">
+                  <countermeasures/>
+                </weakness>
+              </weaknesses>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-130-excessive-allocation" name="CAPEC-130 Excessive Allocation" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An adversary causes the target to allocate excessive resources to servicing the attackers' request, thereby reducing the resources available for legitimate services and degrading or denying services. Usually, this attack focuses on memory allocation, but any finite resource on the target could be the attacked, including bandwidth, processing cycles, or other resources. This attack does not attempt to force this allocation through a large number of requests (that would be Resource Depletion through Flooding) but instead uses one or a small number of requests that are carefully formatted to force the target to allocate excessive resources to service this request(s). Often this attack takes advantage of a bug in the target to cause the target to allocate resources vastly beyond what would be needed for a normal request.</desc>
+              <riskRating confidentiality="50" integrity="50" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-1325">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-404">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-770">
+                  <countermeasures/>
+                </weakness>
+              </weaknesses>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-131-resource-leak-exposure" name="CAPEC-131 Resource Leak Exposure" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An adversary utilizes a resource leak on the target to deplete the quantity of the resource available to service legitimate requests. Resource leaks most often come in the form of memory leaks where memory is allocated but never released after it has served its purpose, however, theoretically, any other resource that can be reserved can be targeted if the target fails to release the reservation when the reserved resource block is no longer needed. In this attack, the adversary determines what activity results in leaked resources and then triggers that activity on the target. Since some leaks may be small, this may require a large number of requests by the adversary. However, this attack differs from a flooding attack in that the rate of requests is generally not significant. This is because the lost resources due to the leak accumulate until the target is reset, usually by restarting it. Thus, a resource-poor adversary who would be unable to flood the target can still utilize this attack. Resource depletion through leak differs from resource depletion through allocation in that, in the former, the adversary may not be able to control the size of each leaked allocation, but instead allows the leak to accumulate until it is large enough to affect the target's performance. When depleting resources through allocation, the allocated resource may eventually be released by the target so the attack relies on making sure that the allocation size itself is prohibitive of normal operations by the target.</desc>
+              <riskRating confidentiality="50" integrity="50" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-404">
+                  <countermeasures/>
+                </weakness>
+              </weaknesses>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-2-inducing-account-lockout" name="CAPEC-2 Inducing Account Lockout" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An attacker leverages the security functionality of the system aimed at thwarting potential attacks to launch a denial of service attack against a legitimate system user. Many systems, for instance, implement a password throttling mechanism that locks an account after a certain number of incorrect log in attempts. An attacker can leverage this throttling mechanism to lock a legitimate user out of their own account. The weakness that is being leveraged by an attacker is the very security feature that has been put in place to counteract attacks.</desc>
+              <riskRating confidentiality="50" integrity="50" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-645">
+                  <countermeasures/>
+                </weakness>
+              </weaknesses>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-227-sustained-client-engagement" name="CAPEC-227 Sustained Client Engagement" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An adversary attempts to deny legitimate users access to a resource by continually engaging a specific resource in an attempt to keep the resource tied up as long as possible. The adversary's primary goal is not to crash or flood the target, which would alert defenders; rather it is to repeatedly perform actions or abuse algorithmic flaws such that a given resource is tied up and not available to a legitimate user. By carefully crafting a requests that keep the resource engaged through what is seemingly benign requests, legitimate users are limited or completely denied access to the resource. The degree to which the attack is successful depends upon the adversary's ability to sustain resource requests over time with a volume that exceeds the normal usage by legitimate users, as well as other mitigating circumstances such as the target's ability to shift load or acquire additional resources to deal with the depletion. This attack differs from a flooding attack as it is not entirely dependent upon large volumes of requests, and it differs from resource leak exposures which tend to exploit the surrounding environment needed for the resource to function. The key factor in a sustainment attack are the repeated requests that take longer to process than usual.</desc>
+              <riskRating confidentiality="50" integrity="50" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses/>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+          </threats>
+        </usecase>
+      </usecases>
+    </riskPattern>
+    <riskPattern uuid="c17a3979-da93-4bb5-addc-b5f471be26cc" ref="elevation-of-privilege" name="Elevation of Privilege" desc="">
+      <tags>
+        <tag tag="Elevation of Privilege"/>
+      </tags>
+      <weaknesses>
+        <weakness ref="CWE-1244" name="Improper Access to Sensitive Information Using Debug and Test Interfaces" state="0" impact="100">
+          <desc>The product's physical debug and test interface protection does not block untrusted agents, resulting in unauthorized access to and potentially control of sensitive assets.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:14.859">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-1264" name="Hardware Logic with Insecure De-Synchronization between Control and Data Channels" state="0" impact="100">
+          <desc>The hardware logic for error handling and security checks can incorrectly forward data before the security check is complete.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:14.863">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-1311" name="Improper Translation of Security Attributes by Fabric Bridge" state="0" impact="100">
+          <desc>The bridge incorrectly translates security attributes from either trusted to untrusted or from untrusted to trusted when converting from one fabric protocol to another.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:14.868">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-1317" name="Missing Security Checks in Fabric Bridge" state="0" impact="100">
+          <desc>A bridge that is connected to a fabric without security features forwards transactions to the slave without checking the privilege level of the master.  Similarly, it does not check the hardware identity of the transaction received from the slave interface of the bridge.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:14.872">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-20" name="Improper Input Validation" state="0" impact="100">
+          <desc>The product receives input or data, but it does
+        not validate or incorrectly validates that the input has the
+        properties that are required to process the data safely and
+        correctly.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:14.877">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-200" name="Exposure of Sensitive Information to an Unauthorized Actor" state="0" impact="100">
+          <desc>The product exposes sensitive information to an actor that is not explicitly authorized to have access to that information.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:14.887">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-262" name="Not Using Password Aging" state="0" impact="100">
+          <desc>If no mechanism is in place for managing password aging, users will have no incentive to update passwords in a timely manner.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:14.895">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-263" name="Password Aging with Long Expiration" state="0" impact="100">
+          <desc>Allowing password aging to occur unchecked can result in the possibility of diminished password integrity.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:14.909">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-269" name="Improper Privilege Management" state="0" impact="100">
+          <desc>The software does not properly assign, modify, track, or check privileges for an actor, creating an unintended sphere of control for that actor.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:14.921">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-287" name="Improper Authentication" state="0" impact="100">
+          <desc>When an actor claims to have a given identity, the software does not prove or insufficiently proves that the claim is correct.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:14.926">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-290" name="Authentication Bypass by Spoofing" state="0" impact="100">
+          <desc>This attack-focused weakness is caused by improperly implemented authentication schemes that are subject to spoofing attacks.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:14.931">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-294" name="Authentication Bypass by Capture-replay" state="0" impact="100">
+          <desc>A capture-replay flaw exists when the design of the software makes it possible for a malicious user to sniff network traffic and bypass authentication by replaying it to the server in question to the same effect as the original message (or with minor changes).</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:14.941">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-300" name="Channel Accessible by Non-Endpoint" state="0" impact="100">
+          <desc>The product does not adequately verify the identity of actors at both ends of a communication channel, or does not adequately ensure the integrity of the channel, in a way that allows the channel to be accessed or influenced by an actor that is not an endpoint.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:14.952">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-302" name="Authentication Bypass by Assumed-Immutable Data" state="0" impact="100">
+          <desc>The authentication scheme or implementation uses key data elements that are assumed to be immutable, but can be controlled or modified by the attacker.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:14.959">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-307" name="Improper Restriction of Excessive Authentication Attempts" state="0" impact="100">
+          <desc>The software does not implement sufficient measures to prevent multiple failed authentication attempts within in a short time frame, making it more susceptible to brute force attacks.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:14.965">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-308" name="Use of Single-factor Authentication" state="0" impact="100">
+          <desc>The use of single-factor authentication can lead to unnecessary risk of compromise when compared with the benefits of a dual-factor authentication scheme.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:14.971">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-309" name="Use of Password System for Primary Authentication" state="0" impact="100">
+          <desc>The use of password systems as the primary means of authentication may be subject to several flaws or shortcomings, each reducing the effectiveness of the mechanism.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:14.982">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-346" name="Origin Validation Error" state="0" impact="100">
+          <desc>The software does not properly verify that the source of data or communication is valid.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:14.988">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-384" name="Session Fixation" state="0" impact="100">
+          <desc>Authenticating a user, or otherwise establishing a new user session, without invalidating any existing session identifier gives an attacker the opportunity to steal authenticated sessions.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:14.994">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-502" name="Deserialization of Untrusted Data" state="0" impact="100">
+          <desc>The application deserializes untrusted data without sufficiently verifying that the resulting data will be valid.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.000">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-521" name="Weak Password Requirements" state="0" impact="100">
+          <desc>The product does not require that users should have strong passwords, which makes it easier for attackers to compromise user accounts.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.008">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-539" name="Use of Persistent Cookies Containing Sensitive Information" state="0" impact="100">
+          <desc>The web application uses persistent cookies, but the cookies contain sensitive information.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.015">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-593" name="Authentication Bypass: OpenSSL CTX Object Modified after SSL Objects are Created" state="0" impact="100">
+          <desc>The software modifies the SSL context after connection creation has begun.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.020">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-6" name="J2EE Misconfiguration: Insufficient Session-ID Length" state="0" impact="100">
+          <desc>The J2EE application is configured to use an insufficient session ID length.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.025">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-602" name="Client-Side Enforcement of Server-Side Security" state="0" impact="100">
+          <desc>The software is composed of a server that relies on the client to implement a mechanism that is intended to protect the server.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.032">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-642" name="External Control of Critical State Data" state="0" impact="100">
+          <desc>The software stores security-critical state information about its users, or the software itself, in a location that is accessible to unauthorized actors.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.042">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-654" name="Reliance on a Single Factor in a Security Decision" state="0" impact="100">
+          <desc>A protection mechanism relies exclusively, or to a large extent, on the evaluation of a single condition or the integrity of a single object or entity in order to make a decision about granting access to restricted resources or functionality.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.049">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-664" name="Improper Control of a Resource Through its Lifetime" state="0" impact="100">
+          <desc>The software does not maintain or incorrectly maintains control over a resource throughout its lifetime of creation, use, and release.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.055">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-693" name="Protection Mechanism Failure" state="0" impact="100">
+          <desc>The product does not use or incorrectly uses a protection mechanism that provides sufficient defense against directed attacks against the product.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.061">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-724" name="OWASP Top Ten 2004 Category A3 - Broken Authentication and Session Management" state="0" impact="100">
+          <desc>Weaknesses in this category are related to the A3 category in the OWASP Top Ten 2004.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.067">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-732" name="Incorrect Permission Assignment for Critical Resource" state="0" impact="100">
+          <desc>The product specifies permissions for a security-critical resource in a way that allows that resource to be read or modified by unintended actors.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.077">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-77" name="Improper Neutralization of Special Elements used in a Command ('Command Injection')" state="0" impact="100">
+          <desc>The software constructs all or part of a command using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended command when it is sent to a downstream component.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.085">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-829" name="Inclusion of Functionality from Untrusted Control Sphere" state="0" impact="100">
+          <desc>The software imports, requires, or includes executable functionality (such as a library) from a source that is outside of the intended control sphere.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.091">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-94" name="Improper Control of Generation of Code ('Code Injection')" state="0" impact="100">
+          <desc>The software constructs all or part of a code segment using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the syntax or behavior of the intended code segment.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.097">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-99" name="Improper Control of Resource Identifiers ('Resource Injection')" state="0" impact="100">
+          <desc>The software receives input from an upstream component, but it does not restrict or incorrectly restricts the input before it is used as an identifier for a resource that may be outside the intended sphere of control.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.103">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+      </weaknesses>
+      <countermeasures/>
+      <usecases>
+        <usecase ref="elevation-of-privilege" name="Elevation of Privilege" desc="" library="">
+          <threats>
+            <threat ref="capec-114-authentication-abuse" name="CAPEC-114 Authentication Abuse" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An attacker obtains unauthorized access to an application, service or device either through knowledge of the inherent weaknesses of an authentication mechanism, or by exploiting a flaw in the authentication scheme's implementation. In such an attack an authentication mechanism is functioning but a carefully controlled sequence of events causes the mechanism to grant access to the attacker. This attack may exploit assumptions made by the target's authentication procedures, such as assumptions regarding trust relationships or assumptions regarding the generation of secret values. This attack differs from Authentication Bypass attacks in that Authentication Abuse allows the attacker to be certified as a valid user through illegitimate means, while Authentication Bypass allows the user to access protected material without ever being certified as an authenticated user. This attack does not rely on prior sessions established by successfully authenticating users, as relied upon for the "Exploitation of Session Variables, Resource IDs and other Trusted Credentials" attack patterns.</desc>
+              <riskRating confidentiality="50" integrity="50" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-1244">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-287">
+                  <countermeasures/>
+                </weakness>
+              </weaknesses>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-122-privilege-abuse" name="CAPEC-122 Privilege Abuse" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An adversary is able to exploit features of the target that should be reserved for privileged users or administrators but are exposed to use by lower or non-privileged accounts. Access to sensitive information and functionality must be controlled to ensure that only authorized users are able to access these resources. If access control mechanisms are absent or misconfigured, a user may be able to access resources that are intended only for higher level users. An adversary may be able to exploit this to utilize a less trusted account to gain information and perform activities reserved for more trusted accounts. This attack differs from privilege escalation and other privilege stealing attacks in that the adversary never actually escalates their privileges but instead is able to use a lesser degree of privilege to access resources that should be (but are not) reserved for higher privilege accounts. Likewise, the adversary does not exploit trust or subvert systems - all control functionality is working as configured but the configuration does not adequately protect sensitive resources at an appropriate level.</desc>
+              <riskRating confidentiality="50" integrity="50" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-1317">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-269">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-732">
+                  <countermeasures/>
+                </weakness>
+              </weaknesses>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-21-exploitation-of-trusted-identifiers" name="CAPEC-21 Exploitation of Trusted Identifiers" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An adversary guesses, obtains, or "rides" a trusted identifier (e.g. session ID, resource ID, cookie, etc.) to perform authorized actions under the guise of an authenticated user or service. Attacks leveraging trusted identifiers typically result in the adversary laterally moving within the local network, since users are often allowed to authenticate to systems/applications within the network using the same identifier. This allows the adversary to obtain sensitive data, download/install malware on the system, pose as a legitimate user for social engineering purposes, and more.Attacks on trusted identifiers take advantage of the fact that some software accepts user input without verifying its authenticity. Many server side processes are vulnerable to these attacks because the server to server communications have not been analyzed from a security perspective or the processes "trust" other systems because they are behind a firewall. Similarly, servers that use easy to guess or spoofable schemes for representing digital identity can also be vulnerable. Such systems frequently use schemes without cryptography and digital signatures (or with broken cryptography). Identifiers may be guessed or obtained due to insufficient randomness, poor protection (passed/stored in the clear), lack of integrity (unsigned), or improper correlation with access control policy enforcement points. Exposed configuration and properties files that contain sensitive data may additionally provide an adversary with the information needed to obtain these identifiers. An adversary may also "ride" an identifier via a malicious link, as is the case in Cross Site Request Forgery (CSRF) attacks.Regardless of the attack vector, successful spoofing and impersonation of trusted credentials can lead to an adversary breaking authentication, authorization, and audit controls with the target system or application.</desc>
+              <riskRating confidentiality="75" integrity="75" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-290">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-302">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-346">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-384">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-539">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-6">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-602">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-642">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-664">
+                  <countermeasures/>
+                </weakness>
+              </weaknesses>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-22-exploiting-trust-in-client" name="CAPEC-22 Exploiting Trust in Client" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An attack of this type exploits vulnerabilities in client/server communication channel authentication and data integrity. It leverages the implicit trust a server places in the client, or more importantly, that which the server believes is the client. An attacker executes this type of attack by communicating directly with the server where the server believes it is communicating only with a valid client. There are numerous variations of this type of attack.</desc>
+              <riskRating confidentiality="75" integrity="75" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-20">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-200">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-287">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-290">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-693">
+                  <countermeasures/>
+                </weakness>
+              </weaknesses>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-233-privilege-escalation" name="CAPEC-233 Privilege Escalation" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An adversary exploits a weakness enabling them to elevate their privilege and perform an action that they are not supposed to be authorized to perform.</desc>
+              <riskRating confidentiality="50" integrity="50" availability="100" easeOfExploitation="100"/>
+              <references>
+                <reference name="OWASP Web Security Testing Guide[The Open Web Application Security Project (OWASP)]" url="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/05-Authorization_Testing/03-Testing_for_Privilege_Escalation.html"/>
+              </references>
+              <weaknesses>
+                <weakness ref="CWE-1264">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-1311">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-269">
+                  <countermeasures/>
+                </weakness>
+              </weaknesses>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-240-resource-injection" name="CAPEC-240 Resource Injection" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An adversary exploits weaknesses in input validation by manipulating resource identifiers enabling the unintended modification or specification of a resource.</desc>
+              <riskRating confidentiality="75" integrity="75" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-99">
+                  <countermeasures/>
+                </weakness>
+              </weaknesses>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-242-code-injection" name="CAPEC-242 Code Injection" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An adversary exploits a weakness in input validation on the target to inject new code into that which is currently executing. This differs from code inclusion in that code inclusion involves the addition or replacement of a reference to a code file, which is subsequently loaded by the target and used as part of the code of some application.</desc>
+              <riskRating confidentiality="75" integrity="75" availability="100" easeOfExploitation="100"/>
+              <references>
+                <reference name="OWASP Web Security Testing Guide[The Open Web Application Security Project (OWASP)]" url="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/11-Testing_for_Code_Injection.html"/>
+              </references>
+              <weaknesses>
+                <weakness ref="CWE-94">
+                  <countermeasures/>
+                </weakness>
+              </weaknesses>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-248-command-injection" name="CAPEC-248 Command Injection" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An adversary looking to execute a command of their choosing, injects new items into an existing command thus modifying interpretation away from what was intended. Commands in this context are often standalone strings that are interpreted by a downstream component and cause specific responses. This type of attack is possible when untrusted values are used to build these command strings. Weaknesses in input validation or command construction can enable the attack and lead to successful exploitation.</desc>
+              <riskRating confidentiality="75" integrity="75" availability="100" easeOfExploitation="100"/>
+              <references>
+                <reference name="OWASP Web Security Testing Guide[The Open Web Application Security Project (OWASP)]" url="https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/07-Input_Validation_Testing/12-Testing_for_Command_Injection.html"/>
+              </references>
+              <weaknesses>
+                <weakness ref="CWE-77">
+                  <countermeasures/>
+                </weakness>
+              </weaknesses>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-549-local-execution-of-code" name="CAPEC-549 Local Execution of Code" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An adversary installs and executes malicious code on the target system in an effort to achieve a negative technical impact. Examples include rootkits, ransomware, spyware, adware, and others.</desc>
+              <riskRating confidentiality="75" integrity="75" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-829">
+                  <countermeasures/>
+                </weakness>
+              </weaknesses>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-565-password-spraying" name="CAPEC-565 Password Spraying" state="Expose" source="MANUAL" owner="" library="">
+              <desc>In a Password Spraying attack, an adversary tries a small list (e.g. 3-5) of common or expected passwords, often matching the target's complexity policy, against a known list of user accounts to gain valid credentials. The adversary tries a particular password for each user account, before moving onto the next password in the list. This approach assists the adversary in remaining undetected by avoiding rapid or frequent account lockouts. The adversary may then reattempt the process with additional passwords, once enough time has passed to prevent inducing a lockout. Password Spraying attacks often target management services over commonly used ports such as SSH, FTP, Telnet, LDAP, Kerberos, MySQL, and more. Additional targets include Single Sign-On (SSO) or cloud-based applications/services that utilize federated authentication protocols, and externally facing applications. Successful execution of Password Spraying attacks usually lead to lateral movement within the target, which allows the adversary to impersonate the victim or execute any action that the victim is authorized to perform. If the password chosen by the user is commonly used or easily guessed, this attack will be successful (in the absence of other mitigations). This is a specific instance of the password brute forcing attack pattern.Password Spraying Attacks are similar to Dictionary-based Password Attacks (CAPEC-16) in that they both leverage precompiled lists (i.e. dictionaries) of username/password combinations to try against a system/application. The primary difference is that Password Spraying Attacks leverage a known list of user accounts and only try one password for each account before moving onto the next password. In contrast, Dictionary-based Password Attacks leverage unknown username/password combinations and are often executed offline against files containing hashed credentials, where inducing an account lockout is not a concern.Password Spraying Attacks are also similar to Credential Stuffing attacks (CAPEC-600), since both utilize known user accounts and often attack the same targets. Credential Stuffing attacks, however, leverage known username/password combinations, whereas Password Spraying attacks have no insight into known username/password pairs. If a Password Spraying attack succeeds, it may additionally lead to Credential Stuffing attacks on different targets.</desc>
+              <riskRating confidentiality="75" integrity="75" availability="100" easeOfExploitation="100"/>
+              <references>
+                <reference name="A notorious Iranian hacking crew is targeting industrial control systems[Ars Technica]" url="https://arstechnica.com/information-technology/2019/11/a-notorious-iranian-hacking-crew-is-targeting-industrial-control-systems/"/>
+                <reference name="ACSC Releases Advisory on Password Spraying Attacks[Cybersecurity and Infrastructure Security Agency (CISA)]" url="https://www.us-cert.gov/ncas/current-activity/2019/08/08/acsc-releases-advisory-password-spraying-attacks"/>
+                <reference name="Alert (TA18-086A): Brute Force Attacks Conducted by Cyber Actors[Cybersecurity and Infrastructure Security Agency (CISA)]" url="https://www.us-cert.gov/ncas/alerts/TA18-086A"/>
+              </references>
+              <weaknesses>
+                <weakness ref="CWE-262">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-263">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-307">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-308">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-309">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-521">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-654">
+                  <countermeasures/>
+                </weakness>
+              </weaknesses>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-586-object-injection" name="CAPEC-586 Object Injection" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An adversary attempts to exploit an application by injecting additional, malicious content during its processing of serialized objects. Developers leverage serialization in order to convert data or state into a static, binary format for saving to disk or transferring over a network. These objects are then deserialized when needed to recover the data/state. By injecting a malformed object into a vulnerable application, an adversary can potentially compromise the application by manipulating the deserialization process. This can result in a number of unwanted outcomes, including remote code execution.</desc>
+              <riskRating confidentiality="75" integrity="75" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-502">
+                  <countermeasures/>
+                </weakness>
+              </weaknesses>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-94-man-in-the-middle-attack" name="CAPEC-94 Man in the Middle Attack" state="Expose" source="MANUAL" owner="" library="">
+              <desc>This type of attack targets the communication between two components (typically client and server). The attacker places themself in the communication channel between the two components. Whenever one component attempts to communicate with the other (data flow, authentication challenges, etc.), the data first goes to the attacker, who has the opportunity to observe or alter it, and it is then passed on to the other component as if it was never observed. This interposition is transparent leaving the two compromised components unaware of the potential corruption or leakage of their communications. The potential for Man-in-the-Middle attacks yields an implicit lack of trust in communication or identify between two components. MITM attacks differ from sniffing attacks since they often modify the communications prior to delivering it to the intended recipient. These attacks also differ from interception attacks since they may forward the sender's original unmodified data, after copying it, instead of keeping it for themselves.</desc>
+              <riskRating confidentiality="100" integrity="100" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-287">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-290">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-294">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-300">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-593">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-724">
+                  <countermeasures/>
+                </weakness>
+              </weaknesses>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+          </threats>
+        </usecase>
+      </usecases>
+    </riskPattern>
+    <riskPattern uuid="a3f6db56-dcc9-4cfa-b6ee-4e57ecbbeead" ref="information-disclosure" name="Information Disclosure" desc="">
+      <tags>
+        <tag tag="Information Disclosure"/>
+      </tags>
+      <weaknesses>
+        <weakness ref="CWE-1242" name="Inclusion of Undocumented Features or Chicken Bits" state="0" impact="100">
+          <desc>The device includes chicken bits or undocumented features that can create entry points for unauthorized actors.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.111">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-1243" name="Sensitive Non-Volatile Information Not Protected During Debug" state="0" impact="100">
+          <desc>Access to security-sensitive information stored in fuses is not limited during debug.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.116">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-1281" name="Sequence of Processor Instructions Leads to Unexpected Behavior (Halt and Catch Fire)" state="0" impact="100">
+          <desc>Specific combinations of processor instructions lead to undesirable behavior such as locking the processor until a hard reset performed.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.121">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-200" name="Exposure of Sensitive Information to an Unauthorized Actor" state="0" impact="100">
+          <desc>The product exposes sensitive information to an actor that is not explicitly authorized to have access to that information.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.126">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-319" name="Cleartext Transmission of Sensitive Information" state="0" impact="100">
+          <desc>The software transmits sensitive or security-critical data in cleartext in a communication channel that can be sniffed by unauthorized actors.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.132">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-424" name="Improper Protection of Alternate Path" state="0" impact="100">
+          <desc>The product does not sufficiently protect all possible paths that a user can take to access restricted functionality or resources.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.138">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+      </weaknesses>
+      <countermeasures/>
+      <usecases>
+        <usecase ref="information-disclosure" name="Information Disclosure" desc="" library="">
+          <threats>
+            <threat ref="capec-116-excavation" name="CAPEC-116 Excavation" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An adversary actively probes the target in a manner that is designed to solicit information that could be leveraged for malicious purposes. This is achieved by exploring the target via ordinary interactions for the purpose of gathering intelligence about the target, or by sending data that is syntactically invalid or non-standard in an attempt to produce a response that contains the desired data. As a result of these interactions, the adversary is able to obtain information from the target that aids the attacker in making inferences about its security, configuration, or potential vulnerabilities. Examplar exchanges with the target may trigger unhandled exceptions or verbose error messages that reveal information like stack traces, configuration information, path information, or database design. This type of attack also includes the manipulation of query strings in a URI to produce invalid SQL queries, or by trying alternative path values in the hope that the server will return useful information.</desc>
+              <riskRating confidentiality="50" integrity="50" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-1243">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-200">
+                  <countermeasures/>
+                </weakness>
+              </weaknesses>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-117-interception" name="CAPEC-117 Interception" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An adversary monitors data streams to or from the target for information gathering purposes. This attack may be undertaken to solely gather sensitive information or to support a further attack against the target. This attack pattern can involve sniffing network traffic as well as other types of data streams (e.g. radio). The adversary can attempt to initiate the establishment of a data stream or passively observe the communications as they unfold. In all variants of this attack, the adversary is not the intended recipient of the data stream. In contrast to other means of gathering information (e.g., targeting data leaks), the adversary must actively position themself so as to observe explicit data channels (e.g. network traffic) and read the content. However, this attack differs from a Man-In-the-Middle (MITM) attack, as the adversary does not alter the content of the communications nor forward data to the intended recipient.</desc>
+              <riskRating confidentiality="50" integrity="50" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-319">
+                  <countermeasures/>
+                </weakness>
+              </weaknesses>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-169-footprinting" name="CAPEC-169 Footprinting" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An adversary engages in probing and exploration activities to identify constituents and properties of the target. Footprinting is a general term to describe a variety of information gathering techniques, often used by attackers in preparation for some attack. It consists of using tools to learn as much as possible about the composition, configuration, and security mechanisms of the targeted application, system or network. Information that might be collected during a footprinting effort could include open ports, applications and their versions, network topology, and similar information. Although similar to fingerprinting, footprinting aims to get a more holistic view of a system or network, whereas fingerprinting is more targeted to a specific application or operating system. While footprinting is not intended to be damaging (although certain activities, such as network scans, can sometimes cause disruptions to vulnerable applications inadvertently) it may often pave the way for more damaging attacks.</desc>
+              <riskRating confidentiality="25" integrity="25" availability="100" easeOfExploitation="100"/>
+              <references>
+                <reference name="Footprint: What Is And How Do You Erase Them" url="http://www.infosecwriters.com/text_resources/pdf/Footprinting.pdf"/>
+                <reference name="Footprinting And The Basics Of Hacking" url="http://web.textfiles.com/hacking/footprinting.txt"/>
+              </references>
+              <weaknesses>
+                <weakness ref="CWE-200">
+                  <countermeasures/>
+                </weakness>
+              </weaknesses>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-212-functionality-misuse" name="CAPEC-212 Functionality Misuse" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An adversary leverages a legitimate capability of an application in such a way as to achieve a negative technical impact. The system functionality is not altered or modified but used in a way that was not intended. This is often accomplished through the overuse of a specific functionality or by leveraging functionality with design flaws that enables the adversary to gain access to unauthorized, sensitive data.</desc>
+              <riskRating confidentiality="50" integrity="50" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-1242">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-1281">
+                  <countermeasures/>
+                </weakness>
+              </weaknesses>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-216-communication-channel-manipulation" name="CAPEC-216 Communication Channel Manipulation" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An adversary manipulates a setting or parameter on communications channel in order to compromise its security. This can result in information exposure, insertion/removal of information from the communications stream, and/or potentially system compromise.</desc>
+              <riskRating confidentiality="50" integrity="50" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses/>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-224-fingerprinting" name="CAPEC-224 Fingerprinting" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An adversary compares output from a target system to known indicators that uniquely identify specific details about the target. Most commonly, fingerprinting is done to determine operating system and application versions. Fingerprinting can be done passively as well as actively. Fingerprinting by itself is not usually detrimental to the target. However, the information gathered through fingerprinting often enables an adversary to discover existing weaknesses in the target.</desc>
+              <riskRating confidentiality="25" integrity="25" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-200">
+                  <countermeasures/>
+                </weakness>
+              </weaknesses>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-554-functionality-bypass" name="CAPEC-554 Functionality Bypass" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An adversary attacks a system by bypassing some or all functionality intended to protect it. Often, a system user will think that protection is in place, but the functionality behind those protections has been disabled by the adversary.</desc>
+              <riskRating confidentiality="75" integrity="75" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-424">
+                  <countermeasures/>
+                </weakness>
+              </weaknesses>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+          </threats>
+        </usecase>
+      </usecases>
+    </riskPattern>
+    <riskPattern uuid="7963e5ee-f3aa-411a-b884-734706416b35" ref="repudiation" name="Repudiation" desc="">
+      <tags/>
+      <weaknesses>
+        <weakness ref="CWE-117" name="Improper Output Neutralization for Logs" state="0" impact="100">
+          <desc>The software does not neutralize or incorrectly neutralizes output that is written to logs.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.145">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+      </weaknesses>
+      <countermeasures/>
+      <usecases>
+        <usecase ref="repudiation" name="Repudiation" desc="" library="">
+          <threats>
+            <threat ref="capec-195-principal-spoof" name="CAPEC-195 Principal Spoof" state="Expose" source="MANUAL" owner="" library="">
+              <desc>A Principal Spoof is a form of Identity Spoofing where an adversary pretends to be some other person in an interaction. This is often accomplished by crafting a message (either written, verbal, or visual) that appears to come from a person other than the adversary. Phishing and Pharming attacks often attempt to do this so that their attempts to gather sensitive information appear to come from a legitimate source. A Principal Spoof does not use stolen or spoofed authentication credentials, instead relying on the appearance and content of the message to reflect identity. The possible outcomes of a Principal Spoof mirror those of Identity Spoofing. (e.g., escalation of privilege and false attribution of data or activities) Likewise, most techniques for Identity Spoofing (crafting messages or intercepting and replaying or modifying messages) can be used for a Principal Spoof attack. However, because a Principal Spoof is used to impersonate a person, social engineering can be both an attack technique (using social techniques to generate evidence in support of a false identity) as well as a possible outcome (manipulating people's perceptions by making statements or performing actions under a target's name).</desc>
+              <riskRating confidentiality="50" integrity="50" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses/>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-268-audit-log-manipulation" name="CAPEC-268 Audit Log Manipulation" state="Expose" source="MANUAL" owner="" library="">
+              <desc>The attacker injects, manipulates, deletes, or forges malicious log entries into the log file, in an attempt to mislead an audit of the log file or cover tracks of an attack. Due to either insufficient access controls of the log files or the logging mechanism, the attacker is able to perform such actions.</desc>
+              <riskRating confidentiality="50" integrity="50" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-117">
+                  <countermeasures/>
+                </weakness>
+              </weaknesses>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-571-block-logging-to-central-repository" name="CAPEC-571 Block Logging to Central Repository" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An adversary may attempt to block indicators from leaving the host machine. In the case of network based reporting of indicators, an adversary may block traffic associated with reporting to prevent central station analysis. This may be accomplished by many means such as stopping a local process to creating a host-based firewall rule to block traffic to a specific server.</desc>
+              <riskRating confidentiality="25" integrity="25" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses/>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+          </threats>
+        </usecase>
+      </usecases>
+    </riskPattern>
+    <riskPattern uuid="427986be-461f-4bc0-93ab-ef748b1711f4" ref="spoofing" name="Spoofing" desc="">
+      <tags>
+        <tag tag="Spoofing"/>
+      </tags>
+      <weaknesses>
+        <weakness ref="CWE-287" name="Improper Authentication" state="0" impact="100">
+          <desc>When an actor claims to have a given identity, the software does not prove or insufficiently proves that the claim is correct.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.152">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-345" name="Insufficient Verification of Data Authenticity" state="0" impact="100">
+          <desc>The software does not sufficiently verify the origin or authenticity of data, in a way that causes it to accept invalid data.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.157">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+      </weaknesses>
+      <countermeasures/>
+      <usecases>
+        <usecase ref="spoofing" name="Spoofing" desc="" library="">
+          <threats>
+            <threat ref="CAPEC-151" name="CAPEC-151 Identity Spoofing" state="Expose" source="MANUAL" owner="" library="">
+              <desc>Identity Spoofing refers to the action of assuming (i.e., taking on) the identity of some other entity (human or non-human) and then using that identity to accomplish a goal. An adversary may craft messages that appear to come from a different principle or use stolen / spoofed authentication credentials. Alternatively, an adversary may intercept a message from a legitimate sender and attempt to make it look like the message comes from them without changing its content. The latter form of this attack can be used to hijack credentials from legitimate users. Identity Spoofing attacks need not be limited to transmitted messages - any resource that is associated with an identity (for example, a file with a signature) can be the target of an attack where the adversary attempts to change the apparent identity. This attack differs from Content Spoofing attacks where the adversary does not wish to change the apparent identity of the message but instead wishes to change what the message says. In an Identity Spoofing attack, the adversary is attempting to change the identity of the content.</desc>
+              <riskRating confidentiality="50" integrity="50" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-287">
+                  <countermeasures/>
+                </weakness>
+              </weaknesses>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="CAPEC-416" name="CAPEC-416 Manipulate Human Behavior" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An adversary exploits inherent human psychological predisposition to influence a targeted individual or group to solicit information or manipulate the target into performing an action that serves the adversary's interests. Many interpersonal social engineering techniques do not involve outright deception, although they can; many are subtle ways of manipulating a target to remove barriers, make the target feel comfortable, and produce an exchange in which the target is either more likely to share information directly, or let key information slip out unintentionally. A skilled adversary uses these techniques when appropriate to produce the desired outcome. Manipulation techniques vary from the overt, such as pretending to be a supervisor to a help desk, to the subtle, such as making the target feel comfortable with the adversary's speech and thought patterns.</desc>
+              <riskRating confidentiality="50" integrity="50" availability="100" easeOfExploitation="100"/>
+              <references>
+                <reference name="The Official Social Engineering Portal[Tick Tock Computers, LLC]" url="http://www.social-engineer.org"/>
+              </references>
+              <weaknesses/>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-148-content-spoofing" name="CAPEC-148 Content Spoofing" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An adversary modifies content to make it contain something other than what the original content producer intended while keeping the apparent source of the content unchanged. The term content spoofing is most often used to describe modification of web pages hosted by a target to display the adversary's content instead of the owner's content. However, any content can be spoofed, including the content of email messages, file transfers, or the content of other network communication protocols. Content can be modified at the source (e.g. modifying the source file for a web page) or in transit (e.g. intercepting and modifying a message between the sender and recipient). Usually, the adversary will attempt to hide the fact that the content has been modified, but in some cases, such as with web site defacement, this is not necessary. Content Spoofing can lead to malware exposure, financial fraud (if the content governs financial transactions), privacy violations, and other unwanted outcomes.</desc>
+              <riskRating confidentiality="50" integrity="50" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-345">
+                  <countermeasures/>
+                </weakness>
+              </weaknesses>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-154-resource-location-spoofing" name="CAPEC-154 Resource Location Spoofing" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An adversary deceives an application or user and convinces them to request a resource from an unintended location. By spoofing the location, the adversary can cause an alternate resource to be used, often one that the adversary controls and can be used to help them achieve their malicious goals.</desc>
+              <riskRating confidentiality="50" integrity="50" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses/>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-173-action-spoofing" name="CAPEC-173 Action Spoofing" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An adversary is able to disguise one action for another and therefore trick a user into initiating one type of action when they intend to initiate a different action. For example, a user might be led to believe that clicking a button will submit a query, but in fact it downloads software. Adversaries may perform this attack through social means, such as by simply convincing a victim to perform the action or relying on a user's natural inclination to do so, or through technical means, such as a clickjacking attack where a user sees one interface but is actually interacting with a second, invisible, interface.</desc>
+              <riskRating confidentiality="100" integrity="100" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses/>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+          </threats>
+        </usecase>
+      </usecases>
+    </riskPattern>
+    <riskPattern uuid="7d47d7c2-731c-44dd-868f-49a5c51824c4" ref="tampering" name="Tampering" desc="">
+      <tags>
+        <tag tag="Tampering"/>
+      </tags>
+      <weaknesses>
+        <weakness ref="CWE-1189" name="Improper Isolation of Shared Resources on System-on-a-Chip (SoC)" state="0" impact="100">
+          <desc>The product does not properly isolate shared resources between trusted and untrusted agents.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.163">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-119" name="Improper Restriction of Operations within the Bounds of a Memory Buffer" state="0" impact="100">
+          <desc>The software performs operations on a memory buffer, but it can read from or write to a memory location that is outside of the intended boundary of the buffer.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.168">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-1331" name="Improper Isolation of Shared Resources in Network On Chip" state="0" impact="100">
+          <desc>The product does not isolate or incorrectly isolates its on-chip-fabric and internal resources such that they are shared between trusted and untrusted agents, creating timing channels.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.173">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-20" name="Improper Input Validation" state="0" impact="100">
+          <desc>The product receives input or data, but it does
+        not validate or incorrectly validates that the input has the
+        properties that are required to process the data safely and
+        correctly.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.178">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-494" name="Download of Code Without Integrity Check" state="0" impact="100">
+          <desc>The product downloads source code or an executable from a remote location and executes the code without sufficiently verifying the origin and integrity of the code.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-10T19:14:15.183">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+      </weaknesses>
+      <countermeasures/>
+      <usecases>
+        <usecase ref="tampering" name="Tampering" desc="" library="">
+          <threats>
+            <threat ref="CAPEC-184" name="CAPEC-184 Software Integrity Attack" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An attacker initiates a series of events designed to cause a user, program, server, or device to perform actions which undermine the integrity of software code, device data structures, or device firmware, achieving the modification of the target's integrity to achieve an insecure state.</desc>
+              <riskRating confidentiality="25" integrity="25" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-494">
+                  <countermeasures/>
+                </weakness>
+              </weaknesses>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-123-buffer-manipulation" name="CAPEC-123 Buffer Manipulation" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An adversary manipulates an application's interaction with a buffer in an attempt to read or modify data they shouldn't have access to. Buffer attacks are distinguished in that it is the buffer space itself that is the target of the attack rather than any code responsible for interpreting the content of the buffer. In virtually all buffer attacks the content that is placed in the buffer is immaterial. Instead, most buffer attacks involve retrieving or providing more input than can be stored in the allocated buffer, resulting in the reading or overwriting of other unintended program memory.</desc>
+              <riskRating confidentiality="100" integrity="100" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-119">
+                  <countermeasures/>
+                </weakness>
+              </weaknesses>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-124-shared-resource-manipulation" name="CAPEC-124 Shared Resource Manipulation" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An adversary exploits a resource shared between multiple applications, an application pool or hardware pin multiplexing to affect behavior. Resources may be shared between multiple applications or between multiple threads of a single application. Resource sharing is usually accomplished through mutual access to a single memory location or multiplexed hardware pins. If an adversary can manipulate this shared resource (usually by co-opting one of the applications or threads) the other applications or threads using the shared resource will often continue to trust the validity of the compromised shared resource and use it in their calculations. This can result in invalid trust assumptions, corruption of additional data through the normal operations of the other users of the shared resource, or even cause a crash or compromise of the sharing applications.</desc>
+              <riskRating confidentiality="50" integrity="50" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-1189">
+                  <countermeasures/>
+                </weakness>
+                <weakness ref="CWE-1331">
+                  <countermeasures/>
+                </weakness>
+              </weaknesses>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-153-input-data-manipulation" name="CAPEC-153 Input Data Manipulation" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An attacker exploits a weakness in input validation by controlling the format, structure, and composition of data to an input-processing interface. By supplying input of a non-standard or unexpected form an attacker can adversely impact the security of the target. For example, using a different character encoding might cause dangerous text to be treated as safe text. Alternatively, the attacker may use certain flags, such as file extensions, to make a target application believe that provided data should be handled using a certain interpreter when the data is not actually of the appropriate type. This can lead to bypassing protection mechanisms, forcing the target to use specific components for input processing, or otherwise causing the user's data to be handled differently than might otherwise be expected. This attack differs from Variable Manipulation in that Variable Manipulation attempts to subvert the target's processing through the value of the input while Input Data Manipulation seeks to control how the input is processed.</desc>
+              <riskRating confidentiality="50" integrity="50" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-20">
+                  <countermeasures/>
+                </weakness>
+              </weaknesses>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-161-infrastructure-manipulation" name="CAPEC-161 Infrastructure Manipulation" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An attacker exploits characteristics of the infrastructure of a network entity in order to perpetrate attacks or information gathering on network objects or effect a change in the ordinary information flow between network objects. Most often, this involves manipulation of the routing of network messages so, instead of arriving at their proper destination, they are directed towards an entity of the attackers' choosing, usually a server controlled by the attacker. The victim is often unaware that their messages are not being processed correctly. For example, a targeted client may believe they are connecting to their own bank but, in fact, be connecting to a Pharming site controlled by the attacker which then collects the user's login information in order to hijack the actual bank account.</desc>
+              <riskRating confidentiality="75" integrity="75" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses/>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+            <threat ref="capec-272-protocol-manipulation" name="CAPEC-272 Protocol Manipulation" state="Expose" source="MANUAL" owner="" library="">
+              <desc>An adversary subverts a communications protocol to perform an attack. This type of attack can allow an adversary to impersonate others, discover sensitive information, control the outcome of a session, or perform other attacks. This type of attack targets invalid assumptions that may be inherent in implementers of the protocol, incorrect implementations of the protocol, or vulnerabilities in the protocol itself.</desc>
+              <riskRating confidentiality="50" integrity="50" availability="100" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses/>
+              <countermeasures/>
+              <customFields/>
+            </threat>
+          </threats>
+        </usecase>
+      </usecases>
+    </riskPattern>
+  </riskPatterns>
+  <rules>
+    <rule name="stride" module="component" generatedByGui="true">
+      <conditions/>
+      <actions>
+        <action project="" value="stride-q_::_STRIDE_::_Which STRIDE category of threats apply to this component?_::_1_::_false_::_false_::_" name="INSERT_COMPONENT_QUESTION_GROUP"/>
+      </actions>
+    </rule>
+    <rule name="stride-ans" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION_GROUP_EXISTS" field="id" value="stride-q_::_group"/>
+      </conditions>
+      <actions>
+        <action project="" value="1-spoofing_::_1 - Spoofing_::_Attacks that spoof things like identity, actions, etc." name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="2-Tampering_::_2 - Tampering_::_Tampering and manipulation of  Inputs, protocols and resources, for example." name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="3-Repudiation_::_3 - Repudiation_::_Manipulation of information, such as audit logs." name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="4-Information Disclosure_::_4 - Information Disclosure_::_Attacks that focus on obtaining information, such as interception." name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="5-denial of service_::_5 - Denial of Service_::_Preventing access to a service through methods such as abuse of resources, or flooding access paths to a location." name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="6-elevation of Privilege_::_6 - Elevation of Privilege_::_Methods of accessing sensitive resources through gaining access to elevated privileges (such as admin access.)" name="INSERT_COMPONENT_QUESTION"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-1" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="1-spoofing"/>
+      </conditions>
+      <actions>
+        <action project="" value="spoofing-q_::_Spoofing_::_Which type of Spoofing threat applies?_::_2_::_false_::_false_::_" name="INSERT_COMPONENT_QUESTION_GROUP"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-1-ans" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION_GROUP_EXISTS" field="id" value="spoofing-q_::_group"/>
+      </conditions>
+      <actions>
+        <action project="" value="capec-151_::_CAPEC 151 - Identity Spoofing_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-416_::_CAPEC 416 - Manipulate Human Behaviour_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-173_::_CAPEC 173 - Acton Spoofing_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-154_::_CAPEC 154 - Resource Location Spoofing_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-148_::_CAPEC 148 - Content Spoofing_::_" name="INSERT_COMPONENT_QUESTION"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-1-ans-148" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-148"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_spoofing_::_spoofing_::_capec-148-content-spoofing" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-1-ans-151" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-151"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_spoofing_::_spoofing_::_CAPEC-151" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-1-ans-154" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-154"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_spoofing_::_spoofing_::_capec-154-resource-location-spoofing" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-1-ans-173" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-173"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_spoofing_::_spoofing_::_capec-173-action-spoofing" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-1-ans-416" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-416"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_spoofing_::_spoofing_::_CAPEC-416" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-2" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="2-Tampering"/>
+      </conditions>
+      <actions>
+        <action project="" value="tampering-q_::_Tampering_::_Which type of Tampering threat applies?_::_3_::_false_::_false_::_" name="INSERT_COMPONENT_QUESTION_GROUP"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-2-ans" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION_GROUP_EXISTS" field="id" value="tampering-q_::_group"/>
+      </conditions>
+      <actions>
+        <action project="" value="capec-153_::_CAPEC 153 - Input Data Manipulation_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-272_::_CAPEC 272 - Protocol Manipulation_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-184_::_CAPEC 184  - Software Integrity Attack_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-161_::_CAPEC 161  -Infrastructure Manipulation_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-123_::_CAPEC 123 - Buffer Manipulation_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-124_::_CAPEC 124 - Shared Resource Manipulation_::_" name="INSERT_COMPONENT_QUESTION"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-2-ans-123" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-123"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_tampering_::_tampering_::_capec-123-buffer-manipulation" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-2-ans-124" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-124"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_tampering_::_tampering_::_capec-124-shared-resource-manipulation" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-2-ans-153" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-153"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_tampering_::_tampering_::_capec-153-input-data-manipulation" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-2-ans-161" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-161"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_tampering_::_tampering_::_capec-161-infrastructure-manipulation" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-2-ans-184" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-184"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_tampering_::_tampering_::_CAPEC-184" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-2-ans-272" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-272"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_tampering_::_tampering_::_capec-272-protocol-manipulation" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-3" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="3-Repudiation"/>
+      </conditions>
+      <actions>
+        <action project="" value="repudiation-q_::_Repudiation_::_Which type of Repudiation threat applies?_::_4_::_false_::_false_::_" name="INSERT_COMPONENT_QUESTION_GROUP"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-3-ans" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION_GROUP_EXISTS" field="id" value="repudiation-q_::_group"/>
+      </conditions>
+      <actions>
+        <action project="" value="capec-268_::_CAPEC 268 - Audit Log Manipulation_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-571_::_CAPEC 571 - Block Logging to Central Repo_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-195_::_CAPEC 195 - Principal Spoof_::_" name="INSERT_COMPONENT_QUESTION"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-3-ans-195" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-195"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_repudiation_::_repudiation_::_capec-195-principal-spoof" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-3-ans-268" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-268"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_repudiation_::_repudiation_::_capec-268-audit-log-manipulation" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-3-ans-571" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-571"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_repudiation_::_repudiation_::_capec-571-block-logging-to-central-repository" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-4" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="4-Information Disclosure"/>
+      </conditions>
+      <actions>
+        <action project="" value="info-q_::_Information Disclosure_::_Which type of Information Disclosure threat applies?_::_5_::_false_::_false_::_" name="INSERT_COMPONENT_QUESTION_GROUP"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-4-ans" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION_GROUP_EXISTS" field="id" value="info-q_::_group"/>
+      </conditions>
+      <actions>
+        <action project="" value="capec-212_::_CAPEC 212 - Functionality Misuse_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-216_::_CAPEC 216 - Communication Channel Manipulation_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-554_::_CAPEC 554 - Functionality Bypass_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-117_::_CAPEC 117 - Interception_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-116_::_CAPEC 116 - Excavation_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-169_::_CAPEC 169 - Foot printing_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-224_::_CAPEC 224 - Finger printing_::_" name="INSERT_COMPONENT_QUESTION"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-4-ans-116" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-116"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_information-disclosure_::_information-disclosure_::_capec-116-excavation" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-4-ans-117" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-117"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_information-disclosure_::_information-disclosure_::_capec-117-interception" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-4-ans-169" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-169"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_information-disclosure_::_information-disclosure_::_capec-169-footprinting" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-4-ans-212" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-212"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_information-disclosure_::_information-disclosure_::_capec-212-functionality-misuse" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-4-ans-216" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-216"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_information-disclosure_::_information-disclosure_::_capec-216-communication-channel-manipulation" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-4-ans-224" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-224"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_information-disclosure_::_information-disclosure_::_capec-224-fingerprinting" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-4-ans-554" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-554"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_information-disclosure_::_information-disclosure_::_capec-554-functionality-bypass" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-5" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="5-denial of service"/>
+      </conditions>
+      <actions>
+        <action project="" value="denial-q_::_Denial of Service_::_Which type of Denial of Service threat applies?_::_6_::_false_::_false_::_" name="INSERT_COMPONENT_QUESTION_GROUP"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-5-ans" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION_GROUP_EXISTS" field="id" value="denial-q_::_group"/>
+      </conditions>
+      <actions>
+        <action project="" value="capec-2_::_CAPEC 2 - Inducing Account Lockout_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-227_::_CAPEC 227 Sustained Client Engagement_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-131_::_CAPEC 131 - Resource Leak Engagement_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-125_::_CAPEC 125 - Flooding_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-130_::_CAPEC 130 - Excessive Allocation_::_" name="INSERT_COMPONENT_QUESTION"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-5-ans-125" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-125"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_denial-of-service_::_denial-of-service_::_capec-125-flooding" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-5-ans-130" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-130"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_denial-of-service_::_denial-of-service_::_capec-130-excessive-allocation" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-5-ans-131" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-131"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_denial-of-service_::_denial-of-service_::_capec-131-resource-leak-exposure" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-5-ans-2" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-2"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_denial-of-service_::_denial-of-service_::_capec-2-inducing-account-lockout" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-5-ans-227" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-227"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_denial-of-service_::_denial-of-service_::_capec-227-sustained-client-engagement" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-6" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="6-elevation of Privilege"/>
+      </conditions>
+      <actions>
+        <action project="" value="elevation-q_::_Elevation of Privilege_::_Which type of Elevation of Privilege threat applies?_::_7_::_false_::_false_::_" name="INSERT_COMPONENT_QUESTION_GROUP"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-6-ans" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION_GROUP_EXISTS" field="id" value="elevation-q_::_group"/>
+      </conditions>
+      <actions>
+        <action project="" value="capec-114_::_CAPEC 114 - Authentication Abuse_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-21_::_CAPEC 21 - Exploitation of Trusted Identifiers_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-586_::_CAPEC 586 - Object Injection_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-240_::_CAPEC 240 - Resource Injection_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-242_::_CAPEC 242 Code Injection_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-248_::_CAPEC 248 - Command injection_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-549_::_CAPEC 549 - Local Code Execution_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-565_::_CAPEC 565 - Password Spraying (Password Abuse)_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-233_::_CAPEC 233 - Privilege Escalation_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-122_::_CAPEC 122 - Privilege Abuse_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-94_::_CAPEC 94 - Adversary in the Middle_::_" name="INSERT_COMPONENT_QUESTION"/>
+        <action project="" value="capec-22_::_CAPEC 22 - Exploiting Trust in the Client_::_" name="INSERT_COMPONENT_QUESTION"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-6-ans-114" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-114"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_elevation-of-privilege_::_elevation-of-privilege_::_capec-114-authentication-abuse" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-6-ans-122" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-122"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_elevation-of-privilege_::_elevation-of-privilege_::_capec-122-privilege-abuse" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-6-ans-21" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-21"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_elevation-of-privilege_::_elevation-of-privilege_::_capec-21-exploitation-of-trusted-identifiers" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-6-ans-22" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-22"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_elevation-of-privilege_::_elevation-of-privilege_::_capec-22-exploiting-trust-in-client" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-6-ans-233" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-233"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_elevation-of-privilege_::_elevation-of-privilege_::_capec-233-privilege-escalation" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-6-ans-240" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-240"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_elevation-of-privilege_::_elevation-of-privilege_::_capec-240-resource-injection" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-6-ans-242" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-242"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_elevation-of-privilege_::_elevation-of-privilege_::_capec-242-code-injection" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-6-ans-248" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-248"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_elevation-of-privilege_::_elevation-of-privilege_::_capec-248-command-injection" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-6-ans-549" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-549"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_elevation-of-privilege_::_elevation-of-privilege_::_capec-549-local-execution-of-code" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-6-ans-565" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-565"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_elevation-of-privilege_::_elevation-of-privilege_::_capec-565-password-spraying" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-6-ans-586" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-586"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_elevation-of-privilege_::_elevation-of-privilege_::_capec-586-object-injection" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+    <rule name="stride-q-6-ans-94" module="component" generatedByGui="true">
+      <conditions>
+        <condition name="CONDITION_COMPONENT_QUESTION" field="id" value="capec-94"/>
+      </conditions>
+      <actions>
+        <action project="stride" value="stride_::_elevation-of-privilege_::_elevation-of-privilege_::_capec-94-man-in-the-middle-attack" name="IMPORT_SPECIFIC_RISK"/>
+      </actions>
+    </rule>
+  </rules>
+</library>
