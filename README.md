@@ -1,14 +1,11 @@
 <p align="center">
 <img src="https://www.iriusrisk.com/hubfs/iriusrisk-logo-1.svg"/>
 </p>
-
+## The Open Threat Modeling platform
 [IriusRisk Community Edition](https://community.iriusrisk.com) is a free version of IriusRisk that allows you to quickly create threat models of software and cloud architectures and then manage those threats and countermeasures throughout the rest of the SDLC, including:
 * Assigning a risk response: Accept, Mitigate or Expose
 * Apply a security standard, such as OWASP ASVS to derive the security requirements in one step
-* Import and publish templates of threat models
-
-## An open Threat Model platform
-All threat models created in IriusRisk can be published as Templates that are visible to other users of the platform.
+* All threat models created in IriusRisk can be published as Templates that are visible to other users of the platform.
 
 ## Getting Started
 * [Register for a user account](https://community.iriusrisk.com)
