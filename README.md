@@ -11,8 +11,7 @@
 All threat models created in IriusRisk can be published as Templates that are visible to other users of the platform.
 
 ## Getting Started
-* Register for a user account at: [https://community.iriusrisk.com] 
-* If you're a user of the old version of Community, you can access your threat models and extract them from: [https://community-legacy.iriusrisk.com] 
+* [Register for a user account](https://community.iriusrisk.com)
 * Follow [@IriusRisk](https://twitter.com/IriusRisk) for updates
 * Submit bugs and feature requests to github
 
