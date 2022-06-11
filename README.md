@@ -1,6 +1,7 @@
 <p align="center">
-<img src="https://www.iriusrisk.com/hubfs/iriusrisk-logo-1.svg"/>
+<img src="https://d7umqicpi7263.cloudfront.net/img/product/63306e3f-8ecd-4f4a-9f7b-e0ceb37afd48/f9368040-ab9b-423d-9a4f-7c0d0b3535bb.png"/>
 </p>
+
 ## The Open Threat Modeling platform
 [IriusRisk Community Edition](https://community.iriusrisk.com) is a free version of IriusRisk that allows you to quickly create threat models of software and cloud architectures and then manage those threats and countermeasures throughout the rest of the SDLC, including:
 * Assigning a risk response: Accept, Mitigate or Expose
