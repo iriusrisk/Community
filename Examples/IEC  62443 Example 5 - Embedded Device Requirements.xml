@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project ref="iec-62443-example-5-embedded-device-requirements" name="IEC  62443 Example 5 - Embedded Device Requirements" isSyncing="false" tags="" modelUpdated="2022-07-12 18:20:49" workflowState="" locked="false">
+  <desc/>
+  <diagram draft="false">
+    <schema>PG14R3JhcGhNb2RlbCBkeD0iMzg0OCIgZHk9IjE0MjIiIGdyaWQ9IjAiIGdyaWRTaXplPSIxMCIgZ3VpZGVzPSIxIiB0b29sdGlwcz0iMSIgY29ubmVjdD0iMSIgYXJyb3dzPSIxIiBmb2xkPSIxIiBwYWdlPSIwIiBwYWdlU2NhbGU9IjEiIHBhZ2VXaWR0aD0iODI3IiBwYWdlSGVpZ2h0PSIxMTY5IiBtYXRoPSIwIiBzaGFkb3c9IjAiIGlyRHJhd2lvVmVyc2lvbj0iNC4yLjAiPgogIDxyb290PgogICAgPG14Q2VsbCBpZD0iMCIvPgogICAgPG14Q2VsbCBpZD0iMSIgcGFyZW50PSIwIi8+CiAgICA8bXhDZWxsIGlkPSI2IiB2YWx1ZT0iaWVjNjI0NDMtc2wxIiBzdHlsZT0iaXIucmVmPTc0MWYxOTUwLTA3N2QtNDVmMC04YjRiLTBiNDQxNTM4MGFjZjtyb3VuZGVkPTE7d2hpdGVTcGFjZT13cmFwO3JlY3Vyc2l2ZVJlc2l6ZT0wO2h0bWw9MTt2ZXJ0aWNhbEFsaWduPXRvcDthbGlnbj1sZWZ0O3N0cm9rZVdpZHRoPTQ7YXJjU2l6ZT0zO2Fic29sdXRlQXJjU2l6ZT0xO3NwYWNpbmdUb3A9MTtzcGFjaW5nTGVmdD0zMjtzdHJva2VDb2xvcj0jMjdBQUUxO2ZpbGxDb2xvcj0jQjlEMEU2O2ZpbGxPcGFjaXR5PTMwO2ZvbnRDb2xvcj0jNTY1MUUwO2Nvbm5lY3RhYmxlPTA7Y29udGFpbmVyPTE7c291cmNlPWlyaXVzcmlzaztpci50eXBlPVRSVVNUWk9ORTtncmFkaWVudENvbG9yPSNCOUQwRTY7IiBwYXJlbnQ9IjEiIHZlcnRleD0iMSIgaXNUaHVtYj0iMCI+CiAgICAgIDxteEdlb21ldHJ5IHg9Ii0xNzgwIiB5PSItMzYzIiB3aWR0aD0iMTg0IiBoZWlnaHQ9IjE4NyIgYXM9Imdlb21ldHJ5Ii8+CiAgICA8L214Q2VsbD4KICAgIDxteENlbGwgaWQ9IjMiIHZhbHVlPSJFRFIiIHN0eWxlPSJpci5yZWY9MmM0NGMxMjQtOTI5ZS00OWI5LWJlNDYtYzEzMGZjODM1ODRlO3JvdW5kZWQ9MTt3aGl0ZVNwYWNlPXdyYXA7aHRtbD0xO2FsaWduPWNlbnRlcjtpbWFnZUFsaWduPWNlbnRlcjtpbWFnZVdpZHRoPTgyO2ltYWdlSGVpZ2h0PTgyO2FyY1NpemU9OTA7YWJzb2x1dGVBcmNTaXplPTE7c3Ryb2tlQ29sb3I9IzI3QUFFMTtmaWxsQ29sb3I9I0UzRkNGQztmb250Q29sb3I9IzAwODRBRDtmb250U2l6ZT0yODtzb3VyY2U9aXJpdXNyaXNrO2lyLnR5cGU9Q09NUE9ORU5UO2lyLmNvbXBvbmVudERlZmluaXRpb24ucmVmPWVkcjt2ZXJ0aWNhbExhYmVsUG9zaXRpb249bWlkZGxlO3ZlcnRpY2FsQWxpZ249bWlkZGxlO2lyLnN5bmNocm9uaXplZD0xO2dyYWRpZW50Q29sb3I9IzI3QUFFMTtzdHJva2VXaWR0aD00O3NoYWRvdz0wO2dsYXNzPTA7cGVyaW1ldGVyU3BhY2luZz0wO2ZvbnRTdHlsZT0xOyIgcGFyZW50PSI2IiB2ZXJ0ZXg9IjEiIGlzVGh1bWI9IjAiPgogICAgICA8bXhHZW9tZXRyeSB4PSI0NyIgeT0iNDguNSIgd2lkdGg9IjkwIiBoZWlnaHQ9IjkwIiBhcz0iZ2VvbWV0cnkiLz4KICAgIDwvbXhDZWxsPgogIDwvcm9vdD4KPC9teEdyYXBoTW9kZWw+Cg==</schema>
+  </diagram>
+  <trustZones>
+    <trustZone ref="iec62443-sl1" uuid="741f1950-077d-45f0-8b4b-0b4415380acf" name="iec62443-sl1" desc="" trustRating="1"/>
+  </trustZones>
+  <questions/>
+  <assets/>
+  <settings>
+    <issueTrackers>
+      <jira>
+        <fields/>
+      </jira>
+    </issueTrackers>
+  </settings>
+  <dataflows/>
+  <customFields/>
+  <components>
+    <component uuid="2c3226b2-8de8-476f-a445-59e56aa8f13d" diagramComponentId="2c44c124-929e-49b9-be46-c130fc83584e" ref="1f5ddfa8-cc4b-480c-878e-04e9280653cb" name="EDR" desc="" library="iec-62443-4-2" parentComponentRef="" componentDefinitionRef="edr" generatedByRules="false" persistent="false">
+      <tags/>
+      <questions/>
+      <trustZones>
+        <trustZone ref="iec62443-sl1"/>
+      </trustZones>
+      <assets/>
+      <settings>
+        <issueTrackers>
+          <jira>
+            <fields/>
+          </jira>
+        </issueTrackers>
+      </settings>
+      <weaknesses>
+        <weakness ref="CWE-494" name="Download of Code Without Integrity Check" state="0" impact="100" issueId="" issueLink="">
+          <desc>The product downloads source code or an executable from a remote location and executes the code without sufficiently verifying the origin and integrity of the code.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-08T16:40:03.307">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-1274" name="Improper Access Control for Volatile Memory Containing Boot Code" state="0" impact="100" issueId="" issueLink="">
+          <desc>The product conducts a secure-boot process that transfers bootloader code from Non-Volatile Memory (NVM) into Volatile Memory (VM), but it does not have sufficient access control or other protections for the Volatile Memory</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-08T16:40:03.293">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-94" name="Improper Control of Generation of Code ('Code Injection')" state="0" impact="100" issueId="" issueLink="">
+          <desc>The software constructs all or part of a code segment using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the syntax or behaviour of the intended code segment.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-08T16:40:03.317">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+        <weakness ref="CWE-507" name="Trojan Horse" state="0" impact="100" issueId="" issueLink="">
+          <desc>The software appears to contain benign or useful functionality, but it also contains code that is hidden from normal operation that violates the intended security policy of the user or the system administrator.</desc>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-08T16:40:03.310">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </weakness>
+      </weaknesses>
+      <countermeasures>
+        <countermeasure ref="edr_boot_process_integrity" name="Embedded devices shall verify the integrity of the firmware, software, and configuration data needed for the component's boot and runtime processes prior to use" issueId="" issueLink="" platform="" cost="0" risk="68" state="Recommended" owner="" library="iec-62443-4-2" source="RULES" edited="false" stateChangeSource="" priority="">
+          <desc>In order to make assurances to an asset owner that a component's security functionality has not been compromised, it is necessary to ensure that the component's software and firmware has not been tampered with, and that the software and firmware is valid to execute on the component. Therefore, the component should perform checks to validate the integrity of the component's firmware and/or software prior to use during the boot process, to ensure that the component does not boot into an insecure or invalid operating state that could damage the component or provide a path for a malicious actor to gain access to additional components, assets, or data.</desc>
+          <implementations/>
+          <references/>
+          <standards>
+            <standard ref="13.9" supportedStandardRef="iec-62443-4-2:2019"/>
+          </standards>
+          <customFields/>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-08T16:40:02.865">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </countermeasure>
+        <countermeasure ref="edr_restrict_mobile_code" name="Enforce Security Policy for the usage of mobile code technologies" issueId="" issueLink="" platform="" cost="0" risk="73" state="Recommended" owner="" library="iec-62443-4-2" source="RULES" edited="false" stateChangeSource="" priority="">
+          <desc>Mobile code technologies include, but are not limited to, Java, JavaScript, ActiveX, portable document format (PDF), Postscript, Shockwave movies, Flash animations and VBScript.
+1. In the event that an embedded device utilizes mobile code technologies, the embedded device shall provide the capability to enforce a security policy for the usage of mobile code technologies. The security policy shall allow, at a minimum, the following actions for each mobile code technology used on the embedded device:
+a) Control execution of mobile code;
+b) Control which users (human, software process, or device) are allowed to upload mobile code to the device;
+c) Control the execution of mobile code based on the results of an integrity check prior to the code being executed.
+2. Both the selection and use of mobile code installed on servers and mobile code downloaded and executed on individual work stations.
+3. Prevent the development, acquisition or introduction of unacceptable mobile code within the control system. For example, mobile code exchanges may be disallowed directly with the
+control system, but may be allowed in a controlled adjacent environment maintained by IACS personnel.</desc>
+          <implementations/>
+          <references/>
+          <standards>
+            <standard ref="13.2" supportedStandardRef="iec-62443-4-2:2019"/>
+          </standards>
+          <customFields/>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-08T16:40:02.895">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </countermeasure>
+        <countermeasure ref="edr_protection_mechanisms_to_prevent_detect_report_mitigate_malware_effects" name="The embedded device shall provide the capability to protect from installation and execution of unauthorized software" issueId="" issueLink="" platform="" cost="0" risk="74" state="Recommended" owner="" library="iec-62443-4-2" source="RULES" edited="false" stateChangeSource="" priority="">
+          <desc>Unauthorized software may contain malicious code and thus be harmful to the component. If an embedded device is able to utilize a compensating control, it need not directly support protection from malicious code. It is assumed that the IACS will be responsible for providing the required safeguards. However, for scenarios such as having a local universal serial bus (USB) host access, the need for protection from malicious code should be determined by a risk assessment.
+1. Detection Technique  - binary integrity and attributes monitoring, hashing and signature techniques.
+2. Prevention Technique -  removable media control, sandbox techniques and specific computing platforms mechanisms such as restricted firmware update capabilities, No Execute (NX) bit, data execution prevention (DEP), address space layout randomization (ASLR), stack corruption detection and mandatory access controls.</desc>
+          <implementations/>
+          <references/>
+          <standards>
+            <standard ref="13.4" supportedStandardRef="iec-62443-4-2:2019"/>
+          </standards>
+          <customFields/>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-08T16:40:02.889">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </countermeasure>
+        <countermeasure ref="edr_updates_support" name="The embedded device shall support the ability to be updated and upgraded" issueId="" issueLink="" platform="" cost="0" risk="68" state="Recommended" owner="" library="iec-62443-4-2" source="RULES" edited="false" stateChangeSource="" priority="">
+          <desc>Embedded devices over their installed lifetime may have the need for installation of updates and upgrades. There will be cases where embedded devices are supporting or executing essential functions as well. When this is the case the embedded device needs to have mechanisms in place to support patching and updating without impacting the essential functions of high availability systems. One example for providing this capability would be to support redundancy within the embedded device.</desc>
+          <implementations/>
+          <references/>
+          <standards>
+            <standard ref="13.5" supportedStandardRef="iec-62443-4-2:2019"/>
+          </standards>
+          <customFields/>
+          <test expiryDate="" expiryPeriod="0">
+            <steps/>
+            <notes/>
+            <source filename="" args="" type="Manual" result="Not Tested" enabled="true" timestamp="2022-06-08T16:40:02.906">
+              <output/>
+            </source>
+            <references/>
+            <customFields/>
+          </test>
+        </countermeasure>
+      </countermeasures>
+      <usecases>
+        <usecase ref="sl1-common-4-2-edr2-4" name="SL1 - Common - 4-2 - EDR2.4" desc="" library="iec-62443-4-2">
+          <threats>
+            <threat ref="2-4-an_adversary_can_execute_remote_code" name="An adversary can execute remote code" state="Expose" source="RULES" edited="false" owner="" library="iec-62443-4-2" editable="true">
+              <desc/>
+              <riskRating confidentiality="50" integrity="100" availability="100" easeOfExploitation="75"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-94">
+                  <countermeasures>
+                    <countermeasure ref="edr_restrict_mobile_code" mitigation="100"/>
+                  </countermeasures>
+                </weakness>
+              </weaknesses>
+              <countermeasures>
+                <countermeasure ref="edr_restrict_mobile_code" mitigation="100"/>
+              </countermeasures>
+              <customFields/>
+            </threat>
+          </threats>
+        </usecase>
+        <usecase ref="sl1-common-4-2-edr3-10" name="SL1 - Common - 4-2 - EDR3.10" desc="" library="iec-62443-4-2">
+          <threats>
+            <threat ref="3-10-execute_malicious_code" name="An adversary can execute malicious code by compromising the host server, performing DNS spoofing, or modifying the code in transit" state="Expose" source="RULES" edited="false" owner="" library="iec-62443-4-2" editable="true">
+              <desc/>
+              <riskRating confidentiality="50" integrity="100" availability="100" easeOfExploitation="50"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-494">
+                  <countermeasures>
+                    <countermeasure ref="edr_updates_support" mitigation="100"/>
+                  </countermeasures>
+                </weakness>
+              </weaknesses>
+              <countermeasures>
+                <countermeasure ref="edr_updates_support" mitigation="100"/>
+              </countermeasures>
+              <customFields/>
+            </threat>
+          </threats>
+        </usecase>
+        <usecase ref="sl1-common-4-2-edr3-14" name="SL1 - Common - 4-2 - EDR3.14" desc="" library="iec-62443-4-2">
+          <threats>
+            <threat ref="3-14-bypass_secure_boot_process_malicious_boot_code" name="An adversary bypasses the secure-boot process and executes their own untrusted, malicious boot code" state="Expose" source="RULES" edited="false" owner="" library="iec-62443-4-2" editable="true">
+              <desc/>
+              <riskRating confidentiality="100" integrity="75" availability="100" easeOfExploitation="50"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-1274">
+                  <countermeasures>
+                    <countermeasure ref="edr_boot_process_integrity" mitigation="100"/>
+                  </countermeasures>
+                </weakness>
+              </weaknesses>
+              <countermeasures>
+                <countermeasure ref="edr_boot_process_integrity" mitigation="100"/>
+              </countermeasures>
+              <customFields/>
+            </threat>
+          </threats>
+        </usecase>
+        <usecase ref="sl1-common-4-2-edr3-2" name="SL1 - Common - 4-2 - EDR3.2" desc="" library="iec-62443-4-2">
+          <threats>
+            <threat ref="3-2-adv_phishing_mail" name="An adversary sends a phishing mail with a trojan as email attachment" state="Expose" source="RULES" edited="false" owner="" library="iec-62443-4-2" editable="true">
+              <desc/>
+              <riskRating confidentiality="75" integrity="75" availability="50" easeOfExploitation="100"/>
+              <references/>
+              <weaknesses>
+                <weakness ref="CWE-507">
+                  <countermeasures>
+                    <countermeasure ref="edr_protection_mechanisms_to_prevent_detect_report_mitigate_malware_effects" mitigation="100"/>
+                  </countermeasures>
+                </weakness>
+              </weaknesses>
+              <countermeasures>
+                <countermeasure ref="edr_protection_mechanisms_to_prevent_detect_report_mitigate_malware_effects" mitigation="100"/>
+              </countermeasures>
+              <customFields/>
+            </threat>
+          </threats>
+        </usecase>
+      </usecases>
+    </component>
+  </components>
+  <threadFixScans/>
+</project>
