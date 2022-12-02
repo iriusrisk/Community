@@ -14,7 +14,7 @@
 * Submit bugs and feature requests to github
 
 ## Publishing Templates
-* One of the goals of the Community edition is to start sharing a common set of threat models for typical (or not) architectures.  If you've modeled a system that you believe would benefit the wider Community please publish it as a Template!  This will make it visible to other users of Community who will be able to import it into their own models. The submitted templates will go through a review process and if accepted, be published here on the github site in raw XML format so that non-community users can also take advantage of it.
+* One of the goals of the Community edition is to start sharing a common set of threat models for typical (or not) architectures.  If you've modeled a system that you believe would benefit the wider Community please publish it as a [Template](https://github.com/iriusrisk/Community/tree/master/Examples)!  This will make it visible to other users of Community who will be able to import it into their own models. The submitted templates will go through a review process and if accepted, be published here on the github site in raw XML format so that non-community users can also take advantage of it.
 * NOTE: When you publish a model, it will be removed from the Product table, you'll need to create a new product and import your template into it, to work on it again.
 
 ## Try our commercial edition for these extra features
