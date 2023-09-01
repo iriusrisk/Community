@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        img {
+            max-width: 100%;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Threat Report</h1>
+    <h2>Configuration panel</h2>
+    <label><input type="checkbox" onclick="toggleTags()"> Hide/Show Tags</label>
+    <h2>Diagrams</h2>
+    <!-- <img src="{{ image_path0 }}" alt="Diagram0"> -->
+    <img src="{{ image_path1 }}" alt="Diagram1">
+    <img src="{{ image_path2 }}" alt="Diagram2">
+    <h2>Threats Narrative</h2>
+    {% for index, data in enumerate(table_data) %}
+        <h3>{{ index+1 }}. {{ data.title }}</h3>
+        <p><strong>Threat Description: </strong>{{ data.desc | safe }}</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Impacted component</th>
+                    <th>Risk for component</th>
+                    <th class="tags-header">Tags</th>
+                    <th>Countermeasure Name</th>
+                    <th>Countermeasure Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for _, row in data.table.iterrows() %}
+                    <tr>
+                        <td>{{ row['Impacted component'] }}</td>
+                        <td>{{ row['Risk for component'] }}</td>
+                        <td class="tags-cell">{{ row['Tags'] }}</td>
+                        <td>{{ row['Countermeasure Name'] }}</td>
+                        <td>{{ row['Countermeasure Status'] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+    {% endfor %}
+    <h2>Countermeasures</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Countermeasure Name</th>
+                <th>Countermeasure Description</th>
+                <th>Impacted Components</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for _, row in countermeasures.iterrows() %}
+                <tr>
+                    <td>{{ row['Countermeasure Name'] }}</td>
+                    <td>{{ row['Countermeasure Description'] }}</td>
+                    <td>{{ row['Impacted component'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <script>
+        function toggleTags() {
+            var tagsHeaders = document.getElementsByClassName("tags-header");
+            var tagsCells = document.getElementsByClassName("tags-cell");
+            for (var i = 0; i < tagsHeaders.length; i++) {
+                if (tagsHeaders[i].style.display === "none") {
+                    tagsHeaders[i].style.display = "table-cell";
+                    for (var j = 0; j < tagsCells.length; j++) {
+                        if (tagsCells[j].parentNode.parentNode.parentNode === tagsHeaders[i].parentNode.parentNode.parentNode) {
+                            tagsCells[j].style.display = "table-cell";
+                        }
+                    }
+                } else {
+                    tagsHeaders[i].style.display = "none";
+                    for (var j = 0; j < tagsCells.length; j++) {
+                        if (tagsCells[j].parentNode.parentNode.parentNode === tagsHeaders[i].parentNode.parentNode.parentNode) {
+                            tagsCells[j].style.display = "none";
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

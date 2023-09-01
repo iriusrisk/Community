@@ -1,0 +1,5 @@
+{
+    "base_url": "https://api.example.com",
+    "product_id": "your_product_id_here",
+    "required_tags":["PEEXXXX","smth"]
+}
