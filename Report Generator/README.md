@@ -28,8 +28,8 @@ Generated HTML reports can be copied to Google Docs and edited there. It's not s
 
 ## Google Doc hints
 
-If you copied out HTLM doc to Googleee Docs, you may need to ajust Table Columns Widths to fit the screen. 
-The followig script will do it for you
+If you copied out HTLM doc to Google Docs, you may need to adjust Table Columns Widths to fit the screen. 
+The following script will do it for you
 
 ```
 function adjustTableColumnWidths() {
